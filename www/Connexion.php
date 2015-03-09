@@ -11,7 +11,6 @@
 	}
 	else 
 	{
-
 		header("Location: Erreur.php");
 	}
 ?>

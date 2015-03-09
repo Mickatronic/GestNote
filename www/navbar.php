@@ -71,7 +71,7 @@
           <input type="text" name="login" class="form-control input-sm" placeholder="ex : mhonvault">
         </div>
 		<div class="form-group">
-          <input type="password" name="password" class="form-control input-sm" placeholder="ex ******">
+          <input type="password" name="password" class="form-control input-sm" placeholder="ex : ******">
         </div>
         <input type="submit" class="btn btn-primary btn-sm" value="Connexion"></input>
 		<a href="Inscription.php" class="btn btn-success btn-sm">Inscription</a>
