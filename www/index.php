@@ -1,5 +1,5 @@
 <html>
-<<<<<<< HEAD
+
   <head>
     <title>Page d'accueil</title>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
@@ -25,11 +25,11 @@
       </button>
       <a class="navbar-brand" href="#">Accueil</a>
     </div>
-	 <form class="navbar-form navbar-right" role="search">
+	 <form action="Connexion.php" method="GET" class="navbar-form navbar-right" role="search">
 	    
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="login">
-		  <input type="text" class="form-control" placeholder="mot de passe">
+          <input name="login" type="text" class="form-control" placeholder="login">
+		  <input name="Mdp" type="text" class="form-control" placeholder="mot de passe">
         </div>
         <button type="submit" class="btn btn-info">Connexion</button>
 		<a href="inscription.php" class="btn btn-success">Inscription</a>
@@ -40,30 +40,5 @@
    </nav>
   
   </body>
+
 </html>
-=======
-	<head>
-		<?php 
-		include 'includes.html';
-		?>
-	</head>
-	<body>
-		<?php
-			session_start();
-			include 'navbar.php';
-		?>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-2">
-					Menu
-				</div>
-				<div class="col-sm-10">
-					Section
-				</div>
-			</div>
-		</div>
-	</body>
-	<footer>
-	</footer>
-</html>
->>>>>>> origin/master
