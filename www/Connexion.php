@@ -1,17 +1,18 @@
 <?php
-	session_start ();
-	$login = $_POST['login'];
-	$password = $_POST['password'];
+session_start();
+$_GET["login"];
+$login=$_GET["login"];
+echo $login;
 
-	if($login=="admin" && $password=="admin")
-	{
-		$_SESSION['Login'] = "Admin";
-		echo "Oo".$_SESSION['Login'];
-		header("Location: index.php");
-	}
-	else 
-	{
+$_GET["Mdp"];
+$Mdp=$_GET["Mdp"];
+echo $Mdp;
 
-		header("Location: Erreur.php");
-	}
+If ($login == "t" && $Mdp== "t")
+{
+	$_SESSION["Nom"] = "Admin";
+
+	header("Location: MonEspace.php");
+}
+
 ?>

@@ -1,136 +1,55 @@
 <html>
-	<head>
-		<?php include 'includes.html';?>
-	</head>
-	<body>
-		<?php include 'navbar.php';?>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-1">
-					Menu
-				</div>
-				<div class="col-sm-11">
-					<div class="row">
-						<legend>Inscription</legend>
-						<form method="POST" action="Inscription-validation.php" class="col-sm-12 jumbotron">
-							<div class="row">
-								<div class="col-sm-6">
-									<div class="row">
-										<div class="form-horizontal">
-											
-											<div class="form-group">
-											  <label class="col-sm-2 control-label" for="textinput">Nom:</label>  
-											  <div class="col-sm-8 input-group">
-												<span class="input-group-addon"> <span class="glyphicon glyphicon-user"></span></span>
-												<input id="Nom" name="Nom" placeholder="ex : Honvault" class="form-control input-md" type="text"/>
-											  </div>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="form-horizontal">
-											
-											<div class="form-group">
-											  <label class="col-sm-2 control-label" for="textinput">Login:</label>  
-											  <div class="col-sm-8 input-group">
-												<span class="input-group-addon"> <span class="glyphicon glyphicon-user"></span></span>
-												<input id="Login" name="Login" placeholder="ex : mhonvault" class="form-control input-md" type="text"/>
-											  </div>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="form-horizontal">
-											
-											<div class="form-group">
-											  <label class="col-sm-2 control-label" for="textinput">Mdp:</label>  
-											  <div class="col-sm-8 input-group">
-												<span class="input-group-addon"> <span class="glyphicon glyphicon-lock"></span></span>
-												<input id="Mdp2" name="Mdp2" placeholder="ex : *****" class="form-control input-md" type="password"/>
-											  </div>
-											</div>
-										</div>
-									</div>							
-									<div class="row">
-										<div class="form-horizontal">
-											
-											<div class="form-group">
-											  <label class="col-sm-2 control-label" for="textinput">Email:</label>  
-											  <div class="col-sm-8 input-group">
-												<span class="input-group-addon"> <span class="glyphicon glyphicon-user"></span></span>
-												<input id="Email2" name="Email2" placeholder="ex : mhonvault" class="form-control input-md" type="text"/>
-											  </div>
-											</div>
-										</div>
-									</div>						
-								</div>
-								<div class="col-sm-6">
-									<div class="row">
-										<div class="form-horizontal">
-											
-											<div class="form-group">
-											  <label class="col-sm-3 control-label" for="textinput">Prénom:</label>  
-											  <div class="col-sm-8 input-group">
-												<span class="input-group-addon"> <span class="glyphicon glyphicon-user"></span></span>
-												<input id="Nom" name="Nom" placeholder="ex : Honvault" class="form-control input-md" type="text"/>
-											  </div>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="form-horizontal">
-											
-											<div class="form-group">
-											  <label class="col-sm-3 control-label" for="textinput">Age:</label>  
-											  <div class="col-sm-8 input-group">
-												<span class="input-group-addon"> <span class="glyphicon glyphicon-user"></span></span>
-												<input id="Age" name="Age" placeholder="ex : 26" class="form-control input-md" type="text"/>
-											  </div>
-											</div>
-										</div>
-									</div>	
-									<div class="row">
-										<div class="form-horizontal">
-											
-											<div class="form-group">
-											  <label class="col-sm-3 control-label" for="textinput">Confirmer le Mdp:</label>  
-											  <div class="col-sm-8 input-group">
-												<span class="input-group-addon"> <span class="glyphicon glyphicon-lock"></span></span>
-												<input id="Mdp1" name="Mdp1" placeholder="ex : " class="form-control input-md" type="password"/>
-											  </div>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="form-horizontal">
-												
-											<div class="form-group">
-											  <label class="col-sm-3 control-label" for="textinput">Confirmer l'email:</label>  
-											  <div class="col-sm-8 input-group">
-												<span class="input-group-addon"> <span class="glyphicon glyphicon-user"></span></span>
-												<input id="Email1" name="Email1" placeholder="ex : mhonvault@gmail.com" class="form-control input-md" type="text"/>
-											  </div>
-											</div>
-										</div>
-									</div>							
-								</div>
-							</div>
-							<div class="row">
-								</br></br>
-								<div class="form-group col-sm-offset-4">
-									<div class="col-sm-8">
-										<input type="submit" id="Inscription" name="Inscription" class="btn btn-lg btn-success col-sm-offset-1" value="Inscription"/>
-										<a href="Accueil.php" class="btn btn-lg btn-danger col-sm-offset-1">Annuler</a>
-									</div>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
+  <head>
+    <title>Page d'accueil</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="bootstrap/js/bootstrap.js"></script>
+	
+  </head>
+  
+  <body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.php">Accueil</a>
+    </div>
+	 <form class="navbar-form navbar-right" role="search">
+	    
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="login">
+		  <input type="text" class="form-control" placeholder="mot de passe">
+        </div>
+        <button type="submit" class="btn btn-info">Connexion</button>
+		<button type="submit" class="btn btn-success">Inscription</button>
+		<button type="submit" class="btn btn-warning">Aide</button>
+		
+      </form>
+   </div>
+   </nav>
+   <div class="container">
+  <div class="row">
+	<div class="col-sm-3">
+	  <div class="form-group">
+		<label class="control-label">Start:</label>
+		<div class="input-group">
+		
+			<span class="input-group-addon" id="start-date"><span class="glyphicon glyphicon-star"></span></span>
+			<input type="text" class="form-control" aria-describedby="start-date">
 		</div>
 		</div>
-	</body>
-	<footer>
-	</footer>
+	</div>
+</div>
+</div>
+  </body>
 </html>

@@ -1,3 +1,7 @@
+<?php
+//Page Acceuil
+	session_start();	
+?>
 <html>
   <head>
     <title>Page d'accueil</title>
@@ -24,17 +28,33 @@
       </button>
       <a class="navbar-brand" href="#">Accueil</a>
     </div>
-	 <form class="navbar-form navbar-right" role="search">
-	    
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="login">
-		  <input type="text" class="form-control" placeholder="mot de passe">
-        </div>
-        <button type="submit" class="btn btn-info">Connexion</button>
+	<?php
+		if (isset ($_SESSION["Nom"]))
+		{
+	?>
+	<form action="Connexion.php" method="GET" class="navbar-form navbar-right" role="search">
+		<a href="deconnexion.php" class="btn btn-danger">deconnexion</a>
+	</form>
+	<?php
+	}
+	else
+	{
+	?>
+	<form action="Connexion.php" method="GET" class="navbar-form navbar-right" role="search">
+		<div class="form-group">
+		  <input name="login" type="text" class="form-control" placeholder="login">
+		      <input id="mot de passe" name="mot de passe" type="password" placeholder="mot de passe" class="form-control input-md">
+		 
+		</div>
+		<input type="submit" class="btn btn-info" value="connexion"/>
 		<a href="inscription.php" class="btn btn-success">Inscription</a>
-		
-		
-      </form>
+	</form>
+	  
+	<?php 
+	}
+	?>	  
+
+	 
    </div>
    </nav>
   
