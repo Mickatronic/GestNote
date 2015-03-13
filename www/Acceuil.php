@@ -43,7 +43,7 @@
 	<form action="Connexion.php" method="GET" class="navbar-form navbar-right" role="search">
 		<div class="form-group">
 		  <input name="login" type="text" class="form-control" placeholder="login">
-		      <input id="mot de passe" name="mot de passe" type="password" placeholder="mot de passe" class="form-control input-md">
+		      <input id="Mdp" name="Mdp" type="password" placeholder="mot de passe" class="form-control input-md">
 		 
 		</div>
 		<input type="submit" class="btn btn-info" value="connexion"/>

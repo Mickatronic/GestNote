@@ -29,7 +29,7 @@
 	    
         <div class="form-group">
           <input name="login" type="text" class="form-control" placeholder="login">
-		  <input name="Mdp" type="text" class="form-control" placeholder="mot de passe">
+		  <input id="Mdp" name="Mdp" type="text" class="form-control" placeholder="mot de passe">
         </div>
         <button type="submit" class="btn btn-info">Connexion</button>
 		<a href="inscription.php" class="btn btn-success">Inscription</a>
