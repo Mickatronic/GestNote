@@ -22,8 +22,9 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
+					<a class="navbar-brand" href="Index.php">Accueil</a>
+
 				</div>
-				<a class="navbar-brand" href="index.php">Accueil</a>
 			
 				<div class="navbar-form navbar-left">
 					<a href="MonProfil.php" class="btn btn-info">Mon Profil</a>
@@ -35,7 +36,7 @@
 				<div class="navbar-brand col-lg-offset-2 invisible" >blablabl</div>
 				</li>
 								<li>
-				<div class="navbar-brand col-lg-offset-2" >Aidez la siouplez !</div>
+				<div class="navbar-brand col-lg-offset-2" >Aide</div>
 				</li>
 				</ul>
 				
