@@ -29,6 +29,7 @@
 					<a href="MonProfil.php" class="btn btn-info">Mon Profil</a>
 
 				</div>
+
 				<ul class="nav navbar-nav">
 				<li>
 				<div class="navbar-brand col-lg-offset-2 invisible" >blablablablablabla</div>
@@ -39,6 +40,8 @@
 				</ul>
 				
 				
+
+
 				<form action="Connexion.php" method="GET" class="navbar-form navbar-right" role="search">
 					<div class="form-group">
 						<input name="login" type="text" class="form-control" placeholder="login"/>
