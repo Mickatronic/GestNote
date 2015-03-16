@@ -40,7 +40,7 @@
    </nav>
    <div class="container">
   <div class="row">
-	<div class="col-sm-5">
+	<div class="col-sm-5 col-sm-offset-3">
 		<div class="jumbotron">
 			<div class="row">
 				<div class="form-group">			    
