@@ -8,77 +8,54 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand active" href="#">Accueil</a>
+	  
+	  	    <a class="navbar-brand" href="Index.php">Accueil</a>
+
+			
+	  
+
+	 
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-	    <?php
-	    if(isset($_SESSION['Login']))
-	    {
-	    ?>
-		<li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Clients<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-
-            <li><a href="CreerClient.php">Créer un Client</a></li>
-            <li><a href="ListerClients.php">Lister les clients</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-		<li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documents<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="AjouterDocuments.php">Ajouter un documents</a></li>
-            <li><a href="ListerDocuments.php">Lister les documents</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-		<?php 
-		}
-		?>
-        <li><a href="#">Contact <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">A propos de</a></li>
-        
-      </ul>
-	  
-	  <?php
-	  if(isset($_SESSION['Login']))
-	  {
-	  ?>
-	  <div class="navbar-form navbar-right">
-		<a href="Deconnexion.php" class="btn btn-danger btn-sm">Déconnexion</a>
-	  </div>
-	  
-	  <?php
-	  }
-	  else
-	  {
-
-	  ?>
-
-		<form action="Connexion.php" method="POST" class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" name="login" class="form-control input-sm" placeholder="ex : mhonvault">
-        </div>
+<?php
+		if (isset ($_SESSION["Nom"]))
+		{
+	?>
+	<div class="navbar-brand2">Mon Espace</div>
+	<div class="navbar-form navbar-left">
+		<a href="MonProfil.php" class="btn btn-default">Mon Profil</a>
+		
+	</div>
+	<div class="navbar-form navbar-left">
+		<a class="col-xs-offset-1" href="Index.php"></a>
+	</div>
+	<div  class="navbar-form navbar-right" role="search">
+		<a href="deconnexion.php" class="btn btn-danger">deconnexion</a>
+		<a href="Aide.php" class="btn btn-warning">Aide</a>
+	</div>
+	
+	<?php
+	}
+	else
+	{
+		
+	?>
+	<form action="Connexion.php" method="GET" class="navbar-form navbar-right" role="search">
 		<div class="form-group">
-          <input type="password" name="password" class="form-control input-sm" placeholder="ex : ******">
-        </div>
-        <input type="submit" class="btn btn-primary btn-sm" value="Connexion"></input>
-		<a href="Inscription.php" class="btn btn-success btn-sm">Inscription</a>
-      </form>
-	  <?php
-	  }
-     ?>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+		  <input name="login" type="text" class="form-control" placeholder="login">
+		      <input id="Mdp" name="Mdp" type="password" placeholder="mot de passe" class="form-control input-md">
+		 
+		</div>
+		<input type="submit" class="btn-sd btn btn-info" value="connexion"/>
+		<a href="inscription.php" class="btn btn-sd btn-success">Inscription</a>
+		<a href="Aide.php" class="btn btn-sd btn-warning">Aide</a>
+	</form>
+
+	
+	
+	<?php 
+	}
+	?>	  
+
+	 
+   </div>
+   </nav>
