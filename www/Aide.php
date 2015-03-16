@@ -29,8 +29,16 @@
 					<a href="MonProfil.php" class="btn btn-info">Mon Profil</a>
 
 				</div>
-
-				<div class="navbar-brand" style="margin-left:200px">Aidez la siouplez !</div>
+				<ul class="nav navbar-nav">
+				<li>
+				<div class="navbar-brand col-lg-offset-2 invisible" >blablablablablabla</div>
+				</li>
+								<li>
+				<div class="navbar-brand col-lg-offset-2" >Aidez la siouplez !</div>
+				</li>
+				</ul>
+				
+				
 				<form action="Connexion.php" method="GET" class="navbar-form navbar-right" role="search">
 					<div class="form-group">
 						<input name="login" type="text" class="form-control" placeholder="login"/>
