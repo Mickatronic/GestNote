@@ -106,7 +106,7 @@
 		<div class="row">
 			<div class="form-group">
 			  <div class="col-md-12">
-				<a href="espace1.php" name="button1id" class="btn btn-success">Inscription</a>
+				<a href="MonEspace.php" name="button1id" class="btn btn-success">Inscription</a>
 				<a href="index.php"  name="button2id" class="btn btn-warning">Annulation</a>			
 			  </div>  
 			</div>
