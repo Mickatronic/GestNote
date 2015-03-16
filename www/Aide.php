@@ -45,9 +45,9 @@
 				<div class="navbar-form navbar-left">
 					<a href="MonProfil.php" class="btn btn-info">Mon Profil</a>
 				</div>
-				<div href="MonProfil.php" class="navbar-brand2">Aidez la siouplez !</div>
+				<div href="MonProfil.php" class="navbar-brand2">Aide</div>
 				<div  class="navbar-form navbar-right">
-					<a href="deconnexion.php" class="btn btn-danger">Déconnexion</a>
+					<a href="deconnexion.php" class="btn btn-danger">Deconnexion</a>
 		
 				</div>
 
