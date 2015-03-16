@@ -20,11 +20,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-		
-<?php 
-?>
       </button>
-      <a class="navbar-brand" href="Index.php">Accueil</a>
+      <a class="navbar-brand" href="Accueil.php">Accueil</a>
     </div>
 	 <form class="navbar-form navbar-right" role="search">
 	    
@@ -34,8 +31,9 @@
         </div>
         <button type="submit" class="btn btn-info">Connexion</button>
 		<button type="submit" class="btn btn-success">Inscription</button>
-
 		
       </form>
    </div>
    </nav>
+	
+	
