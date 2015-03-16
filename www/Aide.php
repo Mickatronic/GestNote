@@ -21,7 +21,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="Index.php">Accueil</a>
+      <a class="navbar-brand" href="Accueil.php">Accueil</a>
     </div>
 	 <form class="navbar-form navbar-right" role="search">
 	    
@@ -35,3 +35,5 @@
       </form>
    </div>
    </nav>
+	
+	
