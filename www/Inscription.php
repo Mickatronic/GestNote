@@ -32,6 +32,7 @@
         </div>
         <button type="submit" class="btn btn-info">Connexion</button>
 		<button type="submit" class="btn btn-success">Inscription</button>
+		<a href="Aide.php" class="btn btn-warning">Aide</a>
 		
       </form>
    </div>
@@ -106,7 +107,7 @@
 			<div class="form-group">
 			  <div class="col-md-12">
 				<a href="espace1.php" name="button1id" class="btn btn-success">Inscription</a>
-				<a href="index.php"  name="button2id" class="btn btn-danger">Annulation</a>
+				<a href="index.php"  name="button2id" class="btn btn-warning">Annulation</a>			
 			  </div>  
 			</div>
 		</div>
