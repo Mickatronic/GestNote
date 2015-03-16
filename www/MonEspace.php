@@ -3,7 +3,19 @@
 	session_start();	
 ?>
 <html>
+
   <head>
+  <style>
+  .navbar-brand2
+  {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	text-align: center;
+	margin: auto;
+	margin-top:10px;
+  }
+  </style>
     <title>Mon espace</title>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 
@@ -26,15 +38,29 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <div class="navbar-brand" href="#">Mon espace</div>
+	  
+	  	    <a class="navbar-brand" href="Index.php">Accueil</a>
+
+			
+	  
+
+	 
     </div>
 <?php
 		if (isset ($_SESSION["Nom"]))
 		{
 	?>
+	<div href="MonProfil.php" class="navbar-brand2">Mon Espace</div>
+	<div class="navbar-form navbar-left">
+		<a href="MonProfil.php" class="btn btn-info">Mon Profil</a>
+		
+	</div>
+	<div class="navbar-form navbar-left">
+		<a class="col-xs-offset-1" href="Index.php"></a>
+	</div>
 	<div  class="navbar-form navbar-right" role="search">
 		<a href="deconnexion.php" class="btn btn-danger">deconnexion</a>
-
+		<a href="Aide.php" class="btn btn-warning">Aide</a>
 	</div>
 	
 	<?php
@@ -43,16 +69,14 @@
 	{
 	?>
 	
-		<div class="navbar-form navbar-right"> 	
-		<a href="Deconnexion.php" class="btn btn-info">Deconnexion</a>
-		<a href="Aide.php" class="btn btn-warning">Aide</a>
-		</div>
+
 	
 	<form action="MonEspace.php" method="GET" class="navbar-form nvbar-right" role="search">
 		<div class="form-group">
 		
 		</div>
-			<input type="submit" class="btn btn warning" value="Mon profil"/>
+			
+
 	</form>
 
 	  
