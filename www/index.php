@@ -1,5 +1,8 @@
+<?php
+//Page Acceuil
+	session_start();	
+?>
 <html>
-
   <head>
     <title>Page d'accueil</title>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
@@ -25,20 +28,36 @@
       </button>
       <a class="navbar-brand" href="#">Accueil</a>
     </div>
-	 <form action="Connexion.php" method="GET" class="navbar-form navbar-right" role="search">
-	    
-        <div class="form-group">
-          <input name="login" type="text" class="form-control" placeholder="login">
-		  <input id="Mdp" name="Mdp" type="text" class="form-control" placeholder="mot de passe">
-        </div>
-        <button type="submit" class="btn btn-info">Connexion</button>
-		<a href="inscription.php" class="btn btn-success">Inscription</a>
-		
-		
-      </form>
+	<?php
+		if (isset ($_SESSION["Nom"]))
+		{
+	?>
+	<form action="Connexion.php" method="GET" class="navbar-form navbar-right" role="search">
+		<a href="deconnexion.php" class="btn btn-danger">deconnexion</a>
+	</form>
+	<?php
+	}
+	else
+	{
+	?>
+	<form action="Connexion.php" method="GET" class="navbar-form navbar-right" role="search">
+		<div class="form-group">
+		  <input name="login" type="text" class="form-control" placeholder="login">
+		      <input id="Mdp" name="Mdp" type="password" placeholder="mot de passe" class="form-control input-md">
+		 
+		</div>
+		<input type="submit" class="btn-sd btn btn-info" value="connexion"/>
+		<a href="inscription.php" class="btn btn-sd btn-success">Inscription</a>
+		<a href="Aide.php" class="btn btn-sd btn-warning">Aide</a>
+	</form>
+	  
+	<?php 
+	}
+	?>	  
+
+	 
    </div>
    </nav>
   
   </body>
-
 </html>
