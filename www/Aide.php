@@ -32,7 +32,7 @@
 
 				<ul class="nav navbar-nav">
 				<li>
-				<div class="navbar-brand col-lg-offset-2 invisible" >blablablablablabla</div>
+				<div class="navbar-brand col-lg-offset-2 invisible" >blablabl</div>
 				</li>
 								<li>
 				<div class="navbar-brand col-lg-offset-2" >Aidez la siouplez !</div>
