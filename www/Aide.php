@@ -27,7 +27,7 @@
 			
 				<div class="navbar-form navbar-left">
 					<a href="MonProfil.php" class="btn btn-info">Mon Profil</a>
-<<<<<<< HEAD
+
 				</div>
 
 				<div class="navbar-brand" style="margin-left:200px">Aidez la siouplez !</div>
@@ -47,16 +47,3 @@
 
 	
 	
-=======
-				</div>
-				<div href="MonProfil.php" class="navbar-brand2">Aidez la siouplez !</div>
-				<div  class="navbar-form navbar-right">
-					<a href="deconnexion.php" class="btn btn-danger">Déconnexion</a>
-		
-				</div>
-
-			</div>
-		</nav>
-	</body>
-</html>
->>>>>>> parent of f66f159... aide

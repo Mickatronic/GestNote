@@ -35,6 +35,7 @@
 		<a href="Aide.php" class="btn btn-warning">Aide</a>
 		
       </form>
+  
    </div>
    </nav>
    <div class="container">
@@ -42,21 +43,25 @@
 	<div class="col-sm-3">
 		<div class="row">
 			<div class="form-group">
+			 <div class="container jumbotron">
 				<label class="control-label">Nom: </label>
 				<div class="input-group">
 					<span class="input-group-addon" id="start-date"><span class="glyphicon glyphicon-user"></span></span>
 					<input type="text" class="form-control" aria-describedby="start-date">
 				</div>
+			 </div>	
 			</div>
 		</div>
 		<div class="row">
 			<div class="form-group">
+			  <div class="container jumbotron">
 				<label class="control-label">Prénom: </label>
 				<div class="input-group">
 				
 					<span id="start-date" class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
 					<input type="text" aria-describedby="start-date" class="form-control">
 				</div>
+		      </div>		
 			</div>
 		</div>
 		<div class="row">
@@ -112,6 +117,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 
 </div>
