@@ -42,12 +42,12 @@
 	else
 	{
 	?>
-	<form action="Deconnexion.php" method="GET" class="navbar-form navbar-right" role="search">
-		<div class="form-group">
-		 
+	
+		<div class="navbar-form navbar-right"> 	
+		<a href="Deconnexion.php" class="btn btn-info">Deconnexion</a>
+		<a href="Aide.php" class="btn btn-warning">Aide</a>
 		</div>
-		<input type="submit" class="btn btn-info" value="Deconnexion"/>
-	</form>
+	
 	<form action="MonEspace.php" method="GET" class="navbar-form nvbar-right" role="search">
 		<div class="form-group">
 		

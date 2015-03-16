@@ -48,6 +48,7 @@
 		</div>
 		<input type="submit" class="btn btn-info" value="connexion"/>
 		<a href="inscription.php" class="btn btn-success">Inscription</a>
+		<a href="Aide.php" class="btn btn-warning">Aide</a>
 	</form>
 	  
 	<?php 
