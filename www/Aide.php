@@ -43,7 +43,7 @@
 				<a class="navbar-brand" href="index.php">Accueil</a>
 			
 				<div class="navbar-form navbar-left">
-					<a href="MonProfil.php" class="btn btn-info">Elle me rend fou !</a>
+					<a href="MonProfil.php" class="btn btn-info">Mon Profil</a>
 				</div>
 <<<<<<< HEAD
 				<div href="MonProfil.php" class="navbar-brand2">Aide</div>
@@ -53,6 +53,7 @@
 				</div>
 =======
 				<div href="MonProfil.php" class="navbar-brand2">Aidez la siouplez !</div>
+<<<<<<< HEAD
 <form action="Connexion.php" method="GET" class="navbar-form navbar-right" role="search">
 		<div class="form-group">
 		  <input name="login" type="text" class="form-control" placeholder="login">
@@ -64,12 +65,14 @@
 
 	</form>
 >>>>>>> origin/master
+=======
+				<div  class="navbar-form navbar-right">
+					<a href="deconnexion.php" class="btn btn-danger">Déconnexion</a>
+		
+				</div>
+>>>>>>> 8d7eb8e214cc76beb3fb6ebc0489cf34e1f8d9b9
 
 			</div>
 		</nav>
-		<div class="container jumbotron">
-			elle est folle !
-		</div>
-
 	</body>
 </html>
