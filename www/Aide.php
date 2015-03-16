@@ -30,7 +30,7 @@
 
 				</div>
 
-				<div class="navbar-brand" style="margin-left:200px">Aidez la siouplez !</div>
+				<div class="navbar-brand" style="margin-left:200px">Aide</div>
 				<form action="Connexion.php" method="GET" class="navbar-form navbar-right" role="search">
 					<div class="form-group">
 						<input name="login" type="text" class="form-control" placeholder="login"/>
