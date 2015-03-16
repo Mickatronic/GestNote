@@ -43,25 +43,15 @@
 				<a class="navbar-brand" href="index.php">Accueil</a>
 			
 				<div class="navbar-form navbar-left">
-					<a href="MonProfil.php" class="btn btn-info">Elle me rend fou !</a>
+					<a href="MonProfil.php" class="btn btn-info">Mon Profil</a>
 				</div>
 				<div href="MonProfil.php" class="navbar-brand2">Aidez la siouplez !</div>
-<form action="Connexion.php" method="GET" class="navbar-form navbar-right" role="search">
-		<div class="form-group">
-		  <input name="login" type="text" class="form-control" placeholder="login">
-		      <input id="Mdp" name="Mdp" type="password" placeholder="mot de passe" class="form-control input-md">
-		 
-		</div>
-		<input type="submit" class="btn-sd btn btn-info" value="connexion"/>
-		<a href="inscription.php" class="btn btn-sd btn-success">Inscription</a>
-
-	</form>
+				<div  class="navbar-form navbar-right">
+					<a href="deconnexion.php" class="btn btn-danger">Déconnexion</a>
+		
+				</div>
 
 			</div>
 		</nav>
-		<div class="container jumbotron">
-			elle est folle !
-		</div>
-
 	</body>
 </html>
