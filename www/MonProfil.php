@@ -39,7 +39,43 @@
         <span class="icon-bar"></span>
       </button>
 	  
-	  	    <a class="navbar-brand" href="Index.php">Accueil</a
-	 
-    </div> 
+	  	    <a class="navbar-brand" href="Index.php">Accueil</a>
+			
+    </div>
+	<?php
+		if (isset ($_SESSION["Nom"]))
+		{
+	?>
+	<div class="navbar-brand2">Mon Profil</div>
+	<div class="navbar-form navbar-left">
+		<a href="MonEspace.php" class="btn btn-primary">Mon Espace</a>
+		
+	</div>
+	<div class="navbar-form navbar-left">
+		<a class="col-xs-offset-1" href="Index.php"></a>
+	</div>
+	<div  class="navbar-form navbar-right" role="search">
+		<a href="deconnexion.php" class="btn btn-danger">deconnexion</a>
+		<a href="Aide.php" class="btn btn-warning">Aide</a>
+	</div>
 	
+	<?php
+	}
+	else
+	hearder ("Location: index.php");
+	{
+	?>
+	
+
+	
+	
+	<?php 
+	}
+	?>	  
+
+	 
+   </div>
+   </nav>
+  
+  </body>
+</html>

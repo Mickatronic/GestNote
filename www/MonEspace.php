@@ -52,7 +52,7 @@
 	?>
 	<div class="navbar-brand2">Mon Espace</div>
 	<div class="navbar-form navbar-left">
-		<a href="MonProfil.php" class="btn btn-success">Mon Profil</a>
+		<a href="MonProfil.php" class="btn btn-default">Mon Profil</a>
 		
 	</div>
 	<div class="navbar-form navbar-left">
@@ -66,20 +66,13 @@
 	<?php
 	}
 	else
+	hearder ("Location: index.php");
 	{
 	?>
 	
 
 	
-	<form action="MonEspace.php" method="GET" class="navbar-form nvbar-right" role="search">
-		<div class="form-group">
-		
-		</div>
-			
-
-	</form>
-
-	  
+	
 	<?php 
 	}
 	?>	  
