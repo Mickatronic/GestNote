@@ -15,5 +15,9 @@ if ($login == "t" && $Mdp== "t")
 
 	header("Location: MonEspace.php");
 }
+else
+{
+	header("Location: Erreur.php");
+}
 
 ?>
