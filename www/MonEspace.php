@@ -50,9 +50,9 @@
 		if (isset ($_SESSION["Nom"]))
 		{
 	?>
-	<div href="MonProfil.php" class="navbar-brand2">Mon Espace</div>
+	<div class="navbar-brand2">Mon Espace</div>
 	<div class="navbar-form navbar-left">
-		<a href="MonProfil.php" class="btn btn-info">Mon Profil</a>
+		<a href="MonProfil.php" class="btn btn-success">Mon Profil</a>
 		
 	</div>
 	<div class="navbar-form navbar-left">
