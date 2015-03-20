@@ -86,7 +86,7 @@
 						<div class="form-group">
 						  <div class="col-md-12">
 							<a href="MonEspace.php" name="button1id" class="btn btn-success">Inscription</a>
-							<a href="index.php"  name="button2id" class="btn btn-warning">Annulation</a>			
+							<a href="index.php"  name="button2id" class="btn btn-danger">Annulation</a>			
 						  </div>  
 						</div>
 					</div>
