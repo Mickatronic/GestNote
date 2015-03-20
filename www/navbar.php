@@ -16,44 +16,34 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav">
 			<?php
-			if(isset($_SESSION['Login']))
+			if(isset($_SESSION['Nom']))
 			{
 			?>
 			<li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Clients<span class="caret"></span></a>
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION['Nom'] ;?><span class="caret"></span></a>
 			  <ul class="dropdown-menu" role="menu">
-
-				<li><a href="CreerClient.php">Créer un Client</a></li>
-				<li><a href="ListerClients.php">Lister les clients</a></li>
-				<li><a href="#">Something else here</a></li>
-				<li class="divider"></li>
-				<li><a href="#">Separated link</a></li>
-				<li class="divider"></li>
-				<li><a href="#">One more separated link</a></li>
+				<li><a href="MonEspace.php">MonEspace</a></li>
+				<li><a href="MonProfil.php">MonProfil</a></li>
 			  </ul>
 			</li>
+			
 			<li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documents<span class="caret"></span></a>
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Outils<span class="caret"></span></a>
 			  <ul class="dropdown-menu" role="menu">
-				<li><a href="AjouterDocuments.php">Ajouter un documents</a></li>
-				<li><a href="ListerDocuments.php">Lister les documents</a></li>
-				<li><a href="#">Something else here</a></li>
+				<li><a href="CreerFiches.php">Créer Fiches</a></li>
+				<li><a href="VisualiserFiches.php">Visualiser Fiches</a></li>
 				<li class="divider"></li>
-				<li><a href="#">Separated link</a></li>
-				<li class="divider"></li>
-				<li><a href="#">One more separated link</a></li>
+				<li><a href="VisualiserNotes.php">Visualiser Notes</a></li>
 			  </ul>
 			</li>
 			<?php 
 			}
 			?>
-			<li><a href="#">Contact <span class="sr-only">(current)</span></a></li>
-			<li><a href="#">A propos de</a></li>
 			
 		  </ul>
 		  
 		  <?php
-		  if(isset($_SESSION['Login']))
+		  if(isset($_SESSION['Nom']))
 		  {
 		  ?>
 		  <div class="navbar-form navbar-right">
