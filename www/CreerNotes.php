@@ -25,83 +25,168 @@
     <div class="container">
 	    <div class="jumbotron">
 		    <div class="row">
-				<div class="col-md-3">
-					<div class="control-group">
-					  <label class="control-label" for="selectbasic">Classe :</label>		
-						<div class="controls">
-							<select id="selectbasic" name="selectbasic" class="input-xxlarge">
-							  <option>Seconde</option>
-							  <option>Seconde pro</option>
-							  <option>------------------------------------</option>
-							  <option>Général :</option>
-							  <option>Série S</option>
-							  <option>Série ES</option>
-							  <option>Série L</option>
-							  <option>-------------------------------------</option>
-							  <option>Technologique :</option>
-							  <option>STMG</option>
-							  <option>ST2A</option>
-							  <option>ST2S</option>
-							  <option>ST2D</option>
-							  <option>STL</option>
-							  <option>STAV</option>
-							  <option>TMD</option>
-							  <option>Hôtellerie</option>
-							  <option>-------------------------------------</option>
-							  <option>Professionnel:</option>
-							  <option>Gestion Administration</option>
-							  <option>-------------------------------------</option>
-							  <option>Autre</option>
-							</select>
-						  </div>
-					  </div>	
-				</div>
-				<div class="col-md-3">
-					<div class="control-group">
-						<label class="control-label" for="selectbasic">Matières :</label>
-						  <div class="controls">
-							<select id="selectbasic" name="selectbasic" class="input-xxlarge">
-							  <option>Général :</option>
-							  <option>Maths</option>
-							  <option>Anglais</option>
-							  <option>Espagnol</option>
-							  <option>Philosophie</option>
-							  <option>Histoire</option>
-							  <option>-------------------------------------</option>
-							  <option>Technologique :</option>
-							  <option>Management</option>
-							  <option>Economie</option>
-							  <option>Droit</option>
-							  <option>-------------------------------------</option>
-							  <option>Spécialité :</option>
-							  <option>Système d'information</option>
-							  <option>Finance</option>
-							  <option>Ressources Humaines</option>
-							  <option>Mercatique</option>
-							  <option>-------------------------------------</option>
-							  <option>Autre</option>
-							</select>
-						  </div>
-					</div>	
-				</div>	
-				<div class="col-md-3">	
-					<div class="control-group">
-						<label class="control-label" for="selectbasic">Eleve:</label>
-						  <div class="controls">
-							<select id="selectbasic" name="selectbasic" class="input-xxlarge">	
-							 <option>-------------------------------------</option>
-							</select>
-						  </div>
+				<form action="CreerNotes.php" method="GET">
+					<div class="col-md-3">
+						<div class="control-group">
+						  <label class="control-label" for="IdClasse">Classe :</label>		
+							<div class="controls">
+								<select id="selectbasic" name="IdClasse" class="input-xxlarge">
+								<?php
+									// Ou se trouve ma base ?
+									$db = mysqli_connect('localhost', 'root', '');
+
+									// on sélectionne la base
+									mysqli_select_db($db,'gestionnotes');
+
+									// ProfesseurMatiere + ProfesseurMatiereClasse
+									
+									// on crée la requête SQL
+									$sql = "
+									SELECT c.IdClasse, Nom 
+									FROM ProfesseurMatiere PM, ProfesseurMatiereClasse PMC, Classes c 
+									WHERE PMC.IdProfesseurMatiere=PM.IdProfesseurMatiere
+									AND c.IdClasse = PMC.IdClasse
+									AND PM.IdProfesseur = ".$_SESSION["IdProfesseur"].";";
+									
+									// on envoie la requête
+									$resultat = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+									
+									$idClasseASelectionner = 0;
+									if(isset($_GET["IdClasse"]))
+									{
+										$idClasseASelectionner = $_GET["IdClasse"]; 
+									}
+									
+									
+									while($data = mysqli_fetch_assoc($resultat))
+									{
+										if($idClasseASelectionner==$data["IdClasse"])
+										{
+											echo "<option value=\"".$data["IdClasse"]."\" selected=\"selected\" >".$data["Nom"]."</option>";
+										}
+										else
+										{
+											echo "<option value=\"".$data["IdClasse"]."\">".$data["Nom"]."</option>";
+										}
+									} 
+								?>
+								</select>
+							  </div>
+						  </div>	
 					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="control-group">
-					  <label class="control-label" for="NoteId">Note</label>
-						<div class="controls">
-						 <input id="NoteId" name="NoteId" type="text" placeholder="ex: 10,5" class="input-xxlarge">    
+					<div class="col-md-3">
+						<div class="control-group">
+							<label class="control-label" for="IdMatiere">Matières :</label>
+							  <div class="controls">
+								<select id="IdMatiere" name="IdMatiere" class="input-xxlarge">
+								  <?php
+									// Ou se trouve ma base ?
+									$db = mysqli_connect('localhost', 'root', '');
+
+									// on sélectionne la base
+									mysqli_select_db($db,'gestionnotes');
+									
+									$idClasseASelectionner = 0;
+									if(isset($_GET["IdClasse"]))
+									{
+										$idClasseASelectionner = $_GET["IdClasse"]; 
+									}
+									
+									$sql = "SELECT m.IdMatiere,m.Nom FROM matieres m, professeurs p, professeurMatiere PM, classes c
+										WHERE p.idprofesseur = pm.idprofesseur
+										AND pm.idMatiere = m.idMatiere
+										AND c.IdClasse = m.idClasse 
+										AND p.idProfesseur =  ".$_SESSION["IdProfesseur"].
+										" AND c.idClasse =".$idClasseASelectionner.";";
+										
+									// on envoie la requête
+									$resultat = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+									
+									while($data = mysqli_fetch_assoc($resultat))
+									{
+										echo "<option value=\"".$data["IdMatiere"]."\">".$data["Nom"]."</option>";
+									} 
+								  ?>
+								
+								</select>
+							  </div>
+						</div>	
+					</div>	
+					<div class="col-md-3">	
+						<div class="control-group">
+							<label class="control-label" for="idEleve">Eleve:</label>
+							  <div class="controls">
+								<select id="selectbasic" name="idEleve" class="input-xxlarge">	
+								 <?php
+									// Ou se trouve ma base ?
+									$db = mysqli_connect('localhost', 'root', '');
+
+									// on sélectionne la base
+									mysqli_select_db($db,'gestionnotes');
+									
+									$idClasseASelectionner = 0;
+									if(isset($_GET["IdClasse"]))
+									{
+										$idClasseASelectionner = $_GET["IdClasse"]; 
+									}
+									
+									$sql = "SELECT idEleve, nom, prenom FROM eleves e where e.IdClasse = ".$idClasseASelectionner;
+									
+									// on envoie la requête
+									$resultat = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+									
+									while($data = mysqli_fetch_assoc($resultat))
+									{
+										echo "<option value=\"".$data["idEleve"]."\">".$data["nom"]." ".$data["prenom"]."</option>";
+									} 
+								 ?>
+								</select>
+							  </div>
 						</div>
 					</div>
-				</div>	
+					<div class="col-md-3">
+						<div class="control-group">
+						  <label class="control-label" for="Note">Note</label>
+							<div class="controls">
+							 <input id="NoteId" name="Note" type="text" placeholder="ex: 10,5" class="input-xxlarge">    
+							</div>
+						</div>
+					</div>	
+					<input type="submit" value="Actualiser" class="btn btn-info" />
+				</form>
+				<form method="POST" action="CreerNote-Validation.php">
+					<?php
+						$ClasseId = 0;
+						$EleveId = 0;
+						$MatiereId = 0;
+						$Note = 0;
+						if(isset($_GET['IdClasse']))
+						{
+							$ClasseId = $_GET['IdClasse'];
+						}
+						
+						if(isset($_GET['idEleve']))
+						{
+							$EleveId = $_GET['idEleve'];
+						}
+						
+						if(isset($_GET['IdMatiere']))
+						{
+							$MatiereId = $_GET['IdMatiere'];
+						}
+						
+						if(isset($_GET['Note']))
+						{
+							$Note = $_GET['Note'];
+						}
+						
+						echo "<input type=\"hidden\" name=\"ClasseId\" value=\"".$ClasseId."\" />";
+						echo "<input type=\"hidden\" name=\"EleveId\" value=\"".$EleveId."\" />";
+						echo "<input type=\"hidden\" name=\"MatiereId\" value=\"".$MatiereId."\" />";
+						echo "<input type=\"hidden\" name=\"Notes\" value=\"".$Note."\" />";
+						echo "<input type=\"submit\" value=\"Créer Note\" class=\"btn btn-success\" />";
+					?>
+				</form>
 			</div>		
 		</div>		
 	</div>
