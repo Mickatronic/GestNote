@@ -38,90 +38,37 @@
 								<b>Nom de la matière</b>
 							</td>
 						</tr>
-						<tr>
-							<td> 
-								1
-							</td>
-							<td> 
-								TSTMG SIG
-							</td>
-							<td> 
-								1
-							</td>
-							<td> 
-								Français
-							</td>
-						</tr>
-						<tr>
-							<td> 
-								1
-							</td>
-							<td> 
-								TSTMG SIG
-							</td>
-							<td> 
-								2
-							</td>
-							<td> 
-								Mathématique
-							</td>
-						</tr>
-						<tr>
-							<td> 
-								1
-							</td>
-							<td> 
-								TSTMG SIG
-							</td>
-							<td> 
-								2
-							</td>
-							<td> 
-								Informatique
-							</td>
-						</tr>
-<tr>
-							<td> 
-								2
-							</td>
-							<td> 
-								TES1
-							</td>
-							<td> 
-								3
-							</td>
-							<td> 
-								Français
-							</td>
-						</tr>
-						<tr>
-							<td> 
-								2
-							</td>
-							<td> 
-								TES1
-							</td>
-							<td> 
-								4
-							</td>
-							<td> 
-								Mathématique
-							</td>
-						</tr>
-						<tr>
-							<td> 
-								2
-							</td>
-							<td> 
-								TES1
-							</td>
-							<td> 
-								5
-							</td>
-							<td> 
-								Economique et social
-							</td>
-						</tr>
+						
+						<?php
+							$db = mysqli_connect('localhost', 'root', '');
+
+							// on sélectionne la base
+							mysqli_select_db($db,'gestionnotes');
+
+							// on crée la requête SQL
+							$sql = "SELECT c.IdClasse,c.nom NomClasse, m.Nom NomMatiere,m.idMatiere FROM Classes c, Matieres m WHERE c.idClasse = m.idClasse ORDER BY c.idClasse, m.idMatiere;";
+
+							// on envoie la requête
+							$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+
+							while($data = mysqli_fetch_assoc($req))
+							{
+								echo "<tr>";
+								echo "<td>";
+								echo $data["IdClasse"];
+								echo "</td>";
+								echo "<td>";
+								echo $data["NomClasse"];
+								echo "</td>";
+								echo "<td>";
+								echo $data["idMatiere"];
+								echo "</td>";
+								echo "<td>";
+								echo $data["NomMatiere"];
+								echo "</td>";
+								echo "</tr>";
+							} 
+						?>
 					</table>
 				
 

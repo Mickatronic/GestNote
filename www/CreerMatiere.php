@@ -23,11 +23,26 @@
 				<!-- Form Name -->
 				<legend>Créer Matière</legend>
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="selectbasic">Choisissez la classe</label>
+				  <label class="col-md-4 control-label" for="SelectClasse">Choisissez la classe</label>
 				  <div class="col-md-4">
-					<select id="selectbasic" name="selectbasic" class="form-control">
-					  <option value="1">TSTMG SIG</option>
-					  <option value="2">TES1</option>
+					<select id="SelectClasse" name="SelectClasse" class="form-control">
+					<?php
+							$db = mysqli_connect('localhost', 'root', '');
+
+							// on sélectionne la base
+							mysqli_select_db($db,'gestionnotes');
+
+							// on crée la requête SQL
+							$sql = "SELECT * FROM Classes";
+
+							// on envoie la requête
+							$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+
+							while($data = mysqli_fetch_assoc($req))
+							{
+								echo "<option value=\"".$data["IdClasse"]."\">".$data["Nom"]."</option>";
+							} 
+						?>
 					</select>
 				  </div>
 				</div>
