@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 //Page Acceuil
 	session_start();	
 ?>
@@ -30,7 +30,7 @@
 					</div>
 					<div class="row">
 						<div class="form-group">
-							<label class="control-label">Prénom: </label>
+							<label class="control-label">Pr�nom: </label>
 							<div class="input-group">
 							
 								<span id="start-date" class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
