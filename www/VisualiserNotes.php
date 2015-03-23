@@ -9,23 +9,19 @@
 			include 'includes.html';
 		  ?>
 	
-  </head>
+ </head>
   
   <body>
 	  <?php
 		include 'navbar.php';
 	  ?>
 	  <div class="container">
-		Ton Profil
+		...
 	  </div>
 	  
 	  <div class="container">
   <div class="jumbotron">
-    <center><h3>Mon Profil Panda-Ko</h3></center>      
+    <center><h3>Visualiser mes notes</h3></center>      
     <p></p>      
   </div>
  
-	
-  
-  </body>
-</html>
