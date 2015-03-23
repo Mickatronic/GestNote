@@ -2,6 +2,7 @@
 	$Nom= "";
 	$Prenom= "";
 	$Login= "";
+	$Mdp= "";
 	$Validation= "";
 	$Date= "";
 	$Classe= "";
@@ -10,6 +11,7 @@
 
 	$Nom = $_GET['Nom'];
 	$Prenom= $_GET['Prenom'];
+	$Mdp= $_GET['Mot de Passe'];
 	$Login= $_GET['Login'];
 	$Validation= $_GET['Validation'];
 	$Date= $_GET['Date'];
@@ -24,7 +26,7 @@
 	mysqli_select_db($db,'gestionnotes');
 	// on crée la requête SQL
 	
-	$sql = "Insert Into Eleve(Nom,Prenom,Login,Validation,Date,Classe,Type,AdresseMail) VALUES('".$Nom."','".$Prenom."'".$Login."','".$Validation."''".$Date."','".$Classe."''".$Login."','".$Type."','".$AdresseMail."');";
+	$sql = "Insert Into Eleve(Nom,Prenom,Login,Mdp,Validation,Date,Classe,Type,AdresseMail) VALUES('".$Nom."','".$Prenom."'".$Login."','".Mdp."','".$Validation."''".$Date."','".$Classe."''".$Login."','".$Type."','".$AdresseMail."');";
 	// on envoie la requête
 	$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysqli_error());
 	// on ferme la connexion à mysql

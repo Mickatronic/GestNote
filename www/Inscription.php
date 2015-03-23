@@ -25,7 +25,7 @@
 								<label class="control-label">Nom: </label>
 								<div class="input-group">
 									<span class="input-group-addon" id="start-date"><span class="glyphicon glyphicon-user"></span></span>
-									<input type="text" name="Nom" class="form-control" aria-describedby="start-date">
+									<input type="text" name="Nom" class="form-control" placeholder="ex : tutu" aria-describedby="start-date">
 								</div>
 							</div>
 						</div>
@@ -35,7 +35,7 @@
 								<div class="input-group">
 								
 									<span id="start-date" class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-									<input type="text" name="Prenom" aria-describedby="start-date" class="form-control">
+									<input type="text" name="Prenom" aria-describedby="start-date" placeholder="ex : Mika" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -45,17 +45,26 @@
 								<div class="input-group">
 								
 									<span id="start-date" class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
-									<input type="text" name="Login" aria-describedby="start-date" class="form-control">
+									<input type="text" name="Login" aria-describedby="start-date" class="form-control" placeholder="ex : Login" />
 								</div>
 							</div>
 						</div>
+						
+						<div class="row">
+							<label class="control-label">Mot De Passe: </label>
+							<div class="input-group">
+								<span id="start-date" class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
+								<input type="password" name="Mdp" class="form-control input-sm" placeholder="ex : ******">
+							</div>
+						</div>
+						
 						<div class="row">
 							<div class="form-group">
 								<label class="control-label">Validation: </label>
 								<div class="input-group">
 								
 									<span id="start-date" class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
-									<input type="text" name="Validation" aria-describedby="start-date" class="form-control">
+									<input type="text" name="Validation" placeholder="ex : ******" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -82,6 +91,7 @@
 								</select>
 							  </div>
 							</div>
+						</div>
 						<div class="row">
 							<div class="form-group">
 							  <label class="control-label" for="Type">Type: </label>
@@ -92,6 +102,7 @@
 								</select>
 							  </div>
 							</div>
+						</div>
 						<div class="row">
 							<div class="form-group">
 								<label class="control-label">Adresse Mail</label>
@@ -110,9 +121,9 @@
 							  </div>  
 							</div>
 						</div>
-					</div>
+					</form>
 				</div>
-			</form>
+			</div>
 		</div> <!--Juimbo-->
 	</div>
   </body>
