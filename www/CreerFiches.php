@@ -24,7 +24,12 @@
     <center><h3>Création de fiches</h3></center>      
     <p></p>      
   </div>
-
+  
+  
+<div class="container">
+<div class="">
+<div class="row ">
+<div class="col-sm-offset-1 col-sm-8 jumbotron">
 <form class="form-horizontal">
 <fieldset>
 
@@ -114,7 +119,17 @@
 </textarea>
   </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
+<div class="container">
+<div class="">
+<div class="row ">
+<div class="col-sm-offset-1 col-sm-8 jumbotron">
+<div class="row">
 <p>Ma Fiche<br/>
 <textarea name="contenu" rows="10" cols="50" ><?php
 if (!empty($_POST["contenu"])) {
@@ -139,7 +154,7 @@ if (!empty($_POST["contenu"])) {
   
   
 </div>
-
+<:
 </fieldset>
 </form>
 
