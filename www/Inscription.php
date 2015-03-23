@@ -71,9 +71,9 @@
 						</div>
 						<div class="row">
 							<div class="form-group">
-							  <label class="control-label" for="selectbasic">Classe: </label>
+							  <label class="control-label" for="Classe">Classe: </label>
 							  <div class="">
-								<select id="selectbasic" name="selectbasic" class="form-control">
+								<select id="selectbasic" name="Classe" class="form-control">
 								  <option value="1">1</option>
 								  <option value="2">2</option>
 								  <option value="3">3</option>
@@ -84,9 +84,9 @@
 							</div>
 						<div class="row">
 							<div class="form-group">
-							  <label class="control-label" for="selectbasic">Type: </label>
+							  <label class="control-label" for="Type">Type: </label>
 							  <div class="">
-								<select id="selectbasic" name="selectbasic" class="form-control">
+								<select id="selectbasic" name="Type" class="form-control">
 								  <option value="1">Professeur</option>
 								  <option value="2">Eleve</option>
 								</select>
