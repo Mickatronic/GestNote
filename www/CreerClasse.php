@@ -17,7 +17,7 @@
   ?>
   <div class="container">
 	  <div class="jumbotron">
-			<form class="form-horizontal" method="GET" action="CleerClasse-Validation.php">
+			<form class="form-horizontal" method="GET" action="CreerClasse-Validation.php">
 				<fieldset>
 
 				<!-- Form Name -->

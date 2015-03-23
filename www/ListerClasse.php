@@ -31,22 +31,30 @@
 							<td> <b>Nom de la classe</b>
 							</td>
 						</tr>
-						<tr>
-							<td> 
-								1
-							</td>
-							<td> 
-								TSTMG SIG
-							</td>
-						</tr>
-						<tr>
-							<td> 
-								2
-							</td>
-							<td> 
-								TES
-							</td>
-						</tr>
+						<?php
+							$db = mysqli_connect('localhost', 'root', '');
+
+							// on sélectionne la base
+							mysqli_select_db($db,'gestionnotes');
+
+							// on crée la requête SQL
+							$sql = "SELECT * FROM Classes;";
+
+							// on envoie la requête
+							$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+
+							while($data = mysqli_fetch_assoc($req))
+							{
+								echo "<tr>";
+								echo "<td>";
+								echo $data["IdClasse"];
+								echo "</td>";
+								echo "<td>";
+								echo $data["Nom"];
+								echo "</td>";
+								echo "</tr>";
+							} 
+						?>
 					</table>
 				
 
