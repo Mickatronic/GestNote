@@ -21,7 +21,18 @@
 			{
 			?>
 			<li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION['Nom'] ;?><span class="caret"></span></a>
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo "Administration" ;?><span class="caret"></span></a>
+			  <ul class="dropdown-menu" role="menu">
+				<li><a href="CreerClasse.php">Créer Classe</a></li>
+				<li><a href="ListerClasse.php">Lister Classe</a></li>
+				<li class="divider"></li>
+				<li><a href="CreerMatiere.php">Créer Matiere</a></li>
+				<li><a href="ListerMatiere.php">Lister Matiere</a></li>
+			  </ul>
+			</li>
+			
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo "Utilisateur" ;?><span class="caret"></span></a>
 			  <ul class="dropdown-menu" role="menu">
 				<li><a href="MonEspace.php">Espace</a></li>
 				<li><a href="MonProfil.php">Profil</a></li>
