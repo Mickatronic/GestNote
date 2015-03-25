@@ -60,7 +60,7 @@
 						
 						<div class="row">
 							<div class="form-group">
-								<label class="control-label">Validation: </label>
+								<br><label class="control-label">Validation: </label></br>
 								<div class="input-group">
 								
 									<span id="start-date" class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
@@ -115,10 +115,10 @@
 						</div>
 						<div class="row">
 							<div class="form-group">
-							  <div class="col-md-12">
+							  <center><div class="col-md-12">
 							  <input type="submit" value="Inscription" class="btn btn-success"/>
 								<a href="index.php"  name="button2id" class="btn btn-danger">Annulation</a>			
-							  </div>  
+							  </div></center>  
 							</div>
 						</div>
 					</form>
