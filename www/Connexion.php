@@ -14,7 +14,7 @@ $db = mysqli_connect('localhost', 'root', '');
 mysqli_select_db($db,'gestionnotes');
 
 // on crée la requête SQL
-$sql = "SELECT * FROM eleves WHERE login ='".$login."' and mdp = '".$Mdp."';";
+$sql = "SELECT * FROM eleves WHERE login ='".$login."' and Mdp = '".$Mdp."';";
 
 // on envoie la requête
 $resultat = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
@@ -33,11 +33,11 @@ if($cpt > 0)
 }
 else
 {
-	// Bahhh c'est peut être un prof ?
-	// on crée la requête SQL
+	// C'est peut être un prof ?
+	// On crée la requête SQL
 	$sql = "SELECT * FROM professeurs WHERE login ='".$login."' and mdp = '".$Mdp."';";
 	
-	// on envoie la requête
+	// On envoie la requête
 	$resultat = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 	
 	$cpt=0;
@@ -63,7 +63,7 @@ else
 header("Location: index.php");
 
 
-/*
+
 
 if ($login == "t" && $Mdp== "t")
 {
@@ -75,5 +75,5 @@ else
 {
 	//header("Location: Erreur.php");
 }
-*/
+
 ?>

@@ -154,10 +154,9 @@ if (!empty($_POST["contenu"])) {
   
   
 </div>
-<:
 </fieldset>
 </form>
 
   
-  </body>
+</body>
 </html>

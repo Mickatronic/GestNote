@@ -29,7 +29,7 @@
      <center> <p>...</p> </center>
     </div>
     <div class="col-md-3"> 
-      <center> <p>Notes</p> </center>
+      <center> <p>...</p> </center>
     </div>
 
   </body>
