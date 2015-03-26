@@ -17,8 +17,10 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav">
 			<?php
-			if(isset($_SESSION['Nom']))
+			if(isset($_SESSION['Type']))
 			{
+				if($_SESSION['Type'] == "Prof")
+				{
 			?>
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo "Administration" ;?><span class="caret"></span></a>
@@ -31,6 +33,10 @@
 				<li><a href="ListerMatiere.php">Lister Matiere</a></li>
 			  </ul>
 			</li>
+			<?php
+				}
+			?>
+			  
 			
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo "Utilisateur" ;?><span class="caret"></span></a>
@@ -56,7 +62,7 @@
 		  </ul>
 		  
 		  <?php
-		  if(isset($_SESSION['Nom']))
+		  if(isset($_SESSION['Type']))
 		  {
 		  ?>
 		  <div class="navbar-form navbar-right">

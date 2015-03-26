@@ -29,6 +29,7 @@ if($cpt > 0)
 {
 	// J'ai trouvé un élève !
 	$_SESSION["Type"] = "Eleve";
+	echo "eleve";
 }
 else
 {
