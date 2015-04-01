@@ -8,155 +8,163 @@
 		  <?php
 			include 'includes.html';
 		  ?>
-	
  </head>
-  
   <body>
 	  <?php
 		include 'navbar.php';
 	  ?>
 	  <div class="container">
-		...
+	
 	  </div>
-	  
-	  <div class="container">
-  <div class="jumbotron">
-    <center><h3>Création de fiches</h3></center>      
-    <p></p>      
-  </div>
-  
-  
+	  			
 <div class="container">
-<div class="">
-<div class="row ">
-<div class="col-sm-offset-1 col-sm-8 jumbotron">
-<form class="form-horizontal">
-<fieldset>
+	<div class="jumbotron">
+	<h4>Astuce :</h4>      
+	<p>...</p>      
+	</div>			 
+	<div class="container">
+		<div class="">
+			<div class="row ">
+				<div class="col-xm-offset-1 col-Xm-10 jumbotron">
+						<div> 
+							<fieldset> 
+								<!-- Form Name -->
+								<legend>Ma Fiche</legend>
+								<!-- Form Name -->
+								<div class="form-group">
+									<div class="row">
+										<form action="CreerFiches.php" method="GET">
+											<label class="col-md-2 control-label" for="SelectClasse">Nom de la Classe</label>
+											<div class="col-md-4">
+												<select id="SelectClasse" name="IdClasse" class="form-control">
+												<?php
+													if(isset($_GET["IdClasse"]))
+													{
+														$idclasse = $_GET["IdClasse"];
+													} 
+													else
+													{
+														$idclasse = "";
+													}
+													$db = mysqli_connect('localhost', 'root', '');
 
-<!-- Select Basic -->
-<div class="control-group">
-  <label class="control-label" for="selectbasic">Classe </label>
-  <div class="controls">
-    <select id="selectbasic" name="selectbasic" class="input-xxlarge">
-	  <option>Seconde</option>
-	  <option>Seconde pro</option>
-	  <option>------------------------------------</option>
-	  <option>Général :</option>
-      <option>Série S</option>
-      <option>Série ES</option>
-      <option>Série L</option>
-      <option>-------------------------------------</option>
-      <option>Technologique :</option>
-      <option>STMG</option>
-      <option>ST2A</option>
-      <option>ST2S</option>
-	  <option>ST2D</option>
-	  <option>STL</option>
-	  <option>STAV</option>
-	  <option>TMD</option>
-	  <option>Hôtellerie</option>
-      <option>-------------------------------------</option>
-      <option>Professionnel</option>
-      <option>Gestion Administration</option>
-      <option>-------------------------------------</option>
-      <option>Autre</option>
-    </select>
-  </div>
-</div>
+													// on sélectionne la base
+													mysqli_select_db($db,'gestionnotes');
 
-<!-- Select Basic -->
-<div class="control-group">
-  <label class="control-label" for="selectbasic">Matières </label>
-  <div class="controls">
-    <select id="selectbasic" name="selectbasic" class="input-xxlarge">
-      <option>Général :</option>
-      <option>Maths</option>
-      <option>Anglais</option>
-      <option>Espagnol</option>
-      <option>Philosophie</option>
-      <option>Histoire</option>
-      <option>-------------------------------------</option>
-      <option>Technologique :</option>
-      <option>Management</option>
-      <option>Economie</option>
-      <option>Droit</option>
-      <option>-------------------------------------</option>
-      <option>Spécialité :</option>
-      <option>Système d'information</option>
-      <option>Finance</option>
-      <option>Ressources Humaines</option>
-      <option>Mercatique</option>
-      <option>-------------------------------------</option>
-      <option>Autre</option>
-    </select>
-  </div>
-</div>
+													// on crée la requête SQL
+													$sql = "SELECT * FROM Classes";
 
-<!-- Text input-->
-<div class="control-group">
-  <label class="control-label" for="ThèmeId">Thème</label>
-  <div class="controls">
-    <input id="ThèmeId" name="ThèmeId" type="text" placeholder="Titre" class="input-xxlarge">
-    
-  </div>
-</div>
+													// on envoie la requête
+													$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 
-<!-- Text input-->
-<div class="control-group">
-  <label class="control-label" for="ChapitreId">Chapitre</label>
-  <div class="controls">
-    <input id="ChapitreId" name="ChapitreId" type="text" placeholder="Titre" class="input-xxlarge">
-    
-  </div>
-</div>
+													while($data = mysqli_fetch_assoc($req))
+													{
+														if($idclasse == $data["IdClasse"])
+														{
+															echo "<option value=\"".$data["IdClasse"]."\" selected >".$data["Nom"]."</option>";
+														}
+														else
+														{
+															echo "<option value=\"".$data["IdClasse"]."\">".$data["Nom"]."</option>";
+														}
+														
+														
+													} 
+												?>
+												</select>
+											</div>
+											<input type="submit" class="btn btn-success" value="Raffraichir" name="Raffraichir" />
+										</form>
+									</div>
+								</div>
+								<form  action="Fiche-validation.php" method="GET">
+									<!-- Form Name -->
+									<div class="form-group">
+										<div class="row">
+											<label class="col-md-2 control-label" for="SelectClasse">Nom de la Matiere</label>
+											<div class="col-md-4">
+												<select id="SelectClasse" name="Matiere" class="form-control">
+												<?php
+												$db = mysqli_connect('localhost', 'root', '');
+												if(isset($_GET["IdClasse"]))
+												{
+													$idclasse = $_GET["IdClasse"];
+												} 
+												else
+												{
+													$idclasse = "";
+												}
+												// on sélectionne la base
+												mysqli_select_db($db,'gestionnotes');
+			
+												// on crée la requête SQL
+												$sql = "SELECT * FROM Matieres WHERE IdClasse = ".$idclasse;
 
-<!-- Textarea -->
-<div class="control-group">
-  <label class="control-label" for="FicheId">Fiche</label>
-  <div class="controls">                     
-    <textarea id="FicheId" name="FicheId">
-...
-</textarea>
-  </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+												// on envoie la requête
+												$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 
-<div class="container">
-<div class="">
-<div class="row ">
-<div class="col-sm-offset-1 col-sm-8 jumbotron">
-<div class="row">
-<p>Ma Fiche<br/>
-<textarea name="contenu" rows="10" cols="50" ><?php
-if (!empty($_POST["contenu"])) {
-	echo stripcslashes(htmlspecialchars($_POST["contenu"],ENT_QUOTES));
-}
-?></textarea>
-
-<!-- File Button --> 
-<div class="control-group">
-  <label class="control-label" for="AjouterId">Ajouter</label>
-  <div class="controls">
-    <input id="AjouterId" name="AjouterId" class="input-file" type="file">
-  </div>
+												while($data = mysqli_fetch_assoc($req))
+												{
+													echo "<option value=\"".$data["IdMatiere"]."\">".$data["Nom"]."</option>";
+												} 
+											?>
+											</select>
+										</div>
+									</div>
+					
+									<input type="hidden" name="IddClasse" value="<?php 
+									if(isset($_GET["IdClasse"]))
+									{
+										echo $_GET["IdClasse"];
+									}  
+									?>
+											"/>
+									<!-- Text input-->
+									<div class="row control-group">
+										</br>
+										<label class="col-md-2 control-label" for="ThèmeId">Thème</label>
+										<div class="controls">
+											<input id="ThèmeId" name="Theme" type="text" placeholder="Titre" class="input-xxlarge">						
+										</div>
+									</div>
+									<!-- Text input-->
+									<div class="row control-group">
+									</br>
+										<label class="col-md-2 control-label" for="ChapitreId">Chapitre</label>
+										<div class="controls">
+											<input id="ChapitreId" name="Chapitre" type="text" placeholder="Chapitre" class="input-xxlarge">			
+										</div>
+									</div>	
+										<div class="container">
+											<div class="row ">
+												<div class="col-xm-offset-1 col-sm-8 jumbotron">
+													<p>Ma Fiche<br/>
+													<textarea name="Fiche" rows="10" cols="50" ></textarea>
+													<!-- File Button --> 
+													<div class="control-group">
+													  <div class="controls">
+														<br><input id="AjouterId" name="Ajouter" class="btn btn-inverse" type="file"></br>
+													  </div>
+													</div>
+													<!-- Button -->
+													<div class="control-group">
+													  <label class="control-label" for="CreerId"></label>
+													  <div class="controls">
+														<input type="submit" value="Créer" class="btn btn-info"/>
+													  </div>
+													</div>
+												</div>
+											</div>
+										</div>										
+									</div>
+								</form>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-
-<!-- Button -->
-<div class="control-group">
-  <label class="control-label" for="CreerId"></label>
-  <div class="controls">
-    <button id="CreerId" name="CreerId" class="btn btn-inverse">Créer </button>
-  </div>
-  
-  
-</div>
-</fieldset>
-</form>
-
-  
-</body>
+	</body>
 </html>

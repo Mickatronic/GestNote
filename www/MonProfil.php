@@ -60,7 +60,7 @@
 						
 						<div class="row">
 							<div class="form-group">
-								<label class="control-label">Validation: </label>
+								<br><label class="control-label">Validation: </label></br>
 								<div class="input-group">
 								
 									<span id="start-date" class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>

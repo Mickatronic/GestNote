@@ -25,7 +25,7 @@
 								<label class="control-label">Nom: </label>
 								<div class="input-group">
 									<span class="input-group-addon" id="start-date"><span class="glyphicon glyphicon-user"></span></span>
-									<input type="text" name="Nom" class="form-control" placeholder="ex : tutu" aria-describedby="start-date">
+									<input type="text" name="Nom" class="form-control" placeholder="ex :*****" aria-describedby="start-date">
 								</div>
 							</div>
 						</div>
