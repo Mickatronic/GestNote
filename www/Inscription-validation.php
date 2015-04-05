@@ -6,7 +6,7 @@
 	$Mdp= ""; 
 	$Validation= ""; 
 	$Date= 0; 
-	$Classe= ""; 
+	$IdClasse= ""; 
 	$Type= "";  
 	$Email= ""; 
 
@@ -16,7 +16,7 @@
 	$Login= $_GET['Login'];
 	$Validation= $_GET['Validation'];
 	$Date= $_GET['Date'];
-	$Classe= $_GET['IddClasse'];
+	$IdClasse= $_GET['Classe'];
 	$Type= $_GET['Type'];
 	$Email= $_GET['Email'];
 	
@@ -49,7 +49,7 @@
 	header ('Location :erreur.php');
 	}
 	
-	If ($Classe=="") {
+	If ($IdClasse=="") {
 	header ('Location :erreur.php');
 	}
 	
@@ -57,11 +57,11 @@
 	header ('Location :erreur.php');
 	}
 	
-	If (Type==2) {
-		$sql = "Insert Into Eleves (Nom,Prenom,Login,Mdp,Validation,Date,idClasse,Type,Email) VALUES('".$Nom."','".$Prenom."','".$Login."','".$Mdp."','".$Validation."','".$Date."','".$Classe."','".$Type."','".$Email."');";
+	If ($Type==2) {
+		$sql = "Insert Into Eleves (Nom,Prenom,Login,Mdp,Validation,Date,IdClasse,Type,Email) VALUES('".$Nom."','".$Prenom."','".$Login."','".$Mdp."','".$Validation."','".$Date."','".$IdClasse."','".$Type."','".$Email."');";
 	
 	} else {
-		$sql = "Insert Into Professeuur (Nom,Prenom,Login,Mdp,Validation,Date,Email) VALUES('".$Nom."','".$Prenom."','".$Login."','".$Mdp."','".$Validation."','".$Date."','".$Email."');";
+		$sql = "Insert Into Professeurs (Nom,Prenom,Login,Mdp,Validation,Date,Email) VALUES('".$Nom."','".$Prenom."','".$Login."','".$Mdp."','".$Validation."','".$Date."','".$Email."');";
 	}
 	mysqli_query_ ($sql)
 	
@@ -70,7 +70,7 @@
 	$resultat = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());	
 	
 	//on ferme la connexion à mysql
-	mysqli_close($db) 
+	mysqli_close($db) ;
 	
 	header ('Location: VisualiserFiches.php');
  ?>

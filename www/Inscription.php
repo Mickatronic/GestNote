@@ -83,38 +83,37 @@
 							  <div class="">
 								<select id="selectbasic" name="Classe" class="form-control">
 								 <?php
-								if(isset($_GET["IdClasse"]))
-								{
-									$idclasse = $_GET["IdClasse"];
-								} 
-								else
-								{
-									$idclasse = "";
-								}
-								$db = mysqli_connect('localhost', 'root', '');
-
-								// on sélectionne la base
-								mysqli_select_db($db,'gestionnotes');
-
-								// on crée la requête SQL
-								$sql = "SELECT * FROM Classes";
-
-								// on envoie la requête
-								$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
-
-								while($data = mysqli_fetch_assoc($req))
-								{
-									if($idclasse == $data["IdClasse"])
+									if(isset($_GET["IdClasse"]))
 									{
-										echo "<option value=\"".$data["IdClasse"]."\" selected >".$data["Nom"]."</option>";
-									}
+										$idclasse = $_GET["IdClasse"];
+									} 
 									else
 									{
-										echo "<option value=\"".$data["IdClasse"]."\">".$data["Nom"]."</option>";
+										$idclasse = "";
 									}
-									
-									
-								} 
+									$db = mysqli_connect('localhost', 'root', '');
+
+									// on sélectionne la base
+									mysqli_select_db($db,'gestionnotes');
+
+									// on crée la requête SQL
+									$sql = "SELECT * FROM Classes";
+
+									// on envoie la requête
+									$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+
+									while($data = mysqli_fetch_assoc($req))
+									{
+										if($idclasse == $data["IdClasse"])
+										{
+											echo "<option value=\"".$data["IdClasse"]."\" selected >".$data["Nom"]."</option>";
+										}
+										else
+										{
+											echo "<option value=\"".$data["IdClasse"]."\">".$data["Nom"]."</option>";
+										}
+										
+									} 
 								?>
 								</select>
 							  </div>
