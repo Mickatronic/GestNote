@@ -17,19 +17,31 @@
   ?>
   <div class="container">
   <div class="jumbotron">
-    <center><h1>Bienvenue sur Panda-Ko</h1></center>      
-    <center><p>Le site qui te permettra de créer au mieux ton année scolaire !</p></center>      
+    <h1>Bienvenue sur Panda-Ko</h1>       
+	 <p><b>Un outil simple et pratique</b></p>   
+	 <p>- Réalise tes fiches de révision.</p>
+	 <p>- En relation avec le lycée accède à tes notes.</p> 
+	 <p>- Créer ton planning de révision mais adapte le en t'aidant de tes notes.</p> 
+	<p></p>	
   </div>
   
   <div class="row">
     <div class="col-md-3">
-     <center> <p>Pour chaque matières : créer tes propres fiches de révision tout au long de l'année. Modifie tes fiches, supprime-les ou personnalise-les à  ta façon. </p> </center>
+     <center> 
+	 <b><p></p></b>   
+	 <p></p> 
+	 </center>
     </div>
     <div class="col-md-3"> 
-     <center> <p>...</p> </center>
-    </div>
+     <center> 
+	 <b><p> </p></b>   
+	 <p> </p> 
+	 </center>
     <div class="col-md-3"> 
-      <center> <p>...</p> </center>
+     <center> 
+	 <b><p> </p></b>   
+	 <p></p> 
+	 </center>
     </div>
 
   </body>

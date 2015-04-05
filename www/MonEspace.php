@@ -16,13 +16,17 @@
 		include 'navbar.php';
 	  ?>
 	  <div class="container">
-		Mon Espace
+		
 	  </div>
 	  
 	  <div class="container">
   <div class="jumbotron">
-    <center><h1>Mon Espace Panda-Ko</h1></center>      
-    <p></p>      
+    <h1>Mon Espace Panda-Ko</h1>      
+    <p><b>Un outil simple et pratique</b></p>   
+	 <p>- Réalise tes fiches de révision.</p>
+	 <p>- En relation avec le lycée accède à tes notes.</p> 
+	 <p>- Créer ton planning de révision mais adapte le en t'aidant de tes notes.</p> 
+	<p></p>      
   </div>
  
  
@@ -30,13 +34,13 @@
 
 	<div class="row">
     <div class="col-md-3">
-     <center> <p>Pour chaque matières : créer tes propres fiches de révision tout au long de l'année. Modifie tes fiches, supprime-les ou personnalise-les à ta façon. </p> </center>
+     <center> <p></p> </center>
     </div>
     <div class="col-md-3"> 
-     <center> <p>...</p> </center>
+     <center> <p></p> </center>
     </div>
     <div class="col-md-3"> 
-      <center> <p>Visualise tes notes et oriente tes révisions sur les non-acquis</p> </center>
+      <center> <p></p> </center>
     </div>
   
   

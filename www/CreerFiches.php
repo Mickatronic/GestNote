@@ -129,7 +129,7 @@
 									</div>
 									<!-- Text input-->
 									<div class="row control-group">
-									</br>
+										</br>
 										<label class="col-md-2 control-label" for="ChapitreId">Chapitre</label>
 										<div class="controls">
 											<input id="ChapitreId" name="Chapitre" type="text" placeholder="Chapitre" class="input-xxlarge">			
@@ -166,5 +166,5 @@
 		</div>
 	</div>
 </div>
-	</body>
+</body>
 </html>

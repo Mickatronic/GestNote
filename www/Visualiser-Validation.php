@@ -14,7 +14,7 @@
 	$Theme= $_GET['Theme'];
 	$Chapitre= $_GET['Chapitre'];
 	$Fiche= $_GET['Fiche'];
-	$Ajouter= "";
+//	$Ajouter= $_GET['Ajouter'];
 	
 	if(isset($_SESSION["IdUtilisateur"]))
 	{
@@ -29,7 +29,7 @@
 	
 	// on crée la requête SQL
 	// on concatène $nom et prénom dans $inscription
-	$sql = "Insert Into Fiches (IdClasse,IdEleve,IdMatiere,Theme,Chapitre,Ajouter,Fiche) VALUES('".$Classe."','".$idEleve."','".$IdMatiere."','".$Theme."','".$Chapitre."','".$Ajouter."','".$Fiche."');";
+	$sql = " Select Fiches (IdClasse,IdEleve,IdMatiere,Theme,Chapitre,Ajouter,Fiche) VALUES('".$Classe."','".$idEleve."','".$IdMatiere."','".$Theme."','".$Chapitre."','".$Ajouter."','".$Fiche."');";
 	
 	// on envoie la requête
 	$resultat = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
@@ -38,5 +38,6 @@
 	mysqli_close($db) ;
 	
 	header ('Location: VisualiserFiches.php');
+	
 						
  ?>

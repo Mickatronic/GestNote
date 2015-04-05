@@ -15,90 +15,128 @@
 	  <?php
 		include 'navbar.php';
 	  ?>
+	  
+	<div class="container">
+	<div class="jumbotron">
+	<h4>Révise tes fiches</h4>      
+	<p>...</p>      
+	</div>			 
+	<div class="container">
+		<div class="">
+			<div class="row ">
+				<div class="col-xm-offset-1 col-Xm-10 jumbotron">
+						<div> 
+							<fieldset> 
+								<!-- Form Name -->
+								<legend>Mes Fiches</legend>
+								
+								<!-- Form Name -->
+								<div class="form-group">
+									<div class="row">
+										<form action="VisualiserFiches.php" method="GET">
+											<label class="col-md-2 control-label" for="SelectMatiere">Nom de la Matière</label>
+											<div class="col-md-4">
+												<select id="SelectMatiere" name="IdMatiere" class="form-control">
+												<?php
+													if(isset($_GET["IdMatiere"]))
+													{
+														$idmatiere = $_GET["IdMatiere"];
+													} 
+													else
+													{
+														$idmatiere = "";
+													}
+													$db = mysqli_connect('localhost', 'root', '');
 
-			<div class="container">
-				<div class="jumbotron">		 
-					<div class="container">
-						<div class="">
-							<div class="row ">
-								<div class="col-xm-offset-1 col-sm-9 jumbotron">
-									<form action="Lire-Fiche.php" method="GET">
-										<fieldset>
-											<!-- Form Name -->
-											<legend> Mes Fiches </legend>
-											
-											<!-- Select Basic -->
-											<div class="form-group">
-											  <label class="col-md-5 control-label" for="GénéralId">Général</label>
-											  <div class="col-md-5">
-												<select id="GénéralId" name="GénéralId" class="form-control">
-												  <option value="1">Autre</option>
-												  <option value="2">Maths</option>
-												  <option value="">Anglais</option>
-												  <option value="">Espagnol</option>
-												  <option value="">Philosophie</option>
-												  <option value="">Histoire</option>
+													// on sélectionne la base
+													mysqli_select_db($db,'gestionnotes');
+
+													// on crée la requête SQL
+													$sql = "SELECT m.Nom, m.IdMatiere FROM eleves e, classes c, matieres m WHERE e.idclasse=c.idClasse AND c.idClasse=m.idclasse AND e.ideleve = ".$_SESSION["IdUtilisateur"]." ";
+
+													// on envoie la requête
+													$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+
+													while($data = mysqli_fetch_assoc($req))
+													{
+														if($idmatiere== $data["IdMatiere"])
+														{
+															echo "<option value=\"".$data["IdMatiere"]."\" selected >".$data["Nom"]."</option>";
+														}
+														else
+														{
+															echo "<option value=\"".$data["IdMatiere"]."\">".$data["Nom"]."</option>";
+														}
+														
+														
+													} 
+												?>
 												</select>
-											  </div>
 											</div>
-											<!-- Select Basic -->
-											<div class="form-group"> 
-												<label class="col-md-5 control-label" for="TechnologiqueId">Techno</label>
-												  <div class="col-md-5">
-													<select id="TechnologiqueId" name="TechnologiqueId" class="form-control">
-													  <option value="1">Autre</option>
-													  <option value="2">Management</option>
-													  <option value="">Economie</option>
-													  <option value="">Droit</option>
-													</select>
-												  </div>
-											</div>
-											<!-- Select Basic -->
-											<div class="form-group">
-												<label class="col-md-5 control-label" for="SpecialiteId">Spécialité</label>
-												  <div class="col-md-5">
-													<select id="SpecialiteId" name="SpecialiteId" class="form-control">
-													  <option value="1">Autre</option>
-													  <option value="2">Système d'Information</option>
-													  <option value="">Finance</option>
-													  <option value="">Ressource Humaine</option>
-													  <option value="">Mercatique</option>
-													</select>
-												  </div>
-											</div>
-											<div class="container">						
-												<div class="row ">
-													<div class="col-xm-offset-6 col-sm-8 jumbotron">
-														<div class="row">
-															<p>Ma Fiche<br/>
-															<textarea name="contenu" rows="10" cols="50" >
-															</textarea>
-														</div>
-														<!-- File Button --> 
-														<div class="control-group">
-														  <label class="control-label" for="AjouterId">Ajouter</label>
-														  <div class="controls">
-															<input id="AjouterId" name="AjouterId" class="input-file" type="file">
-														  </div>
-														</div>
-														<!-- Button -->
-														<div class="control-group">
-														  <label class="control-label" for="CreerId"></label>
-														  <div class="controls">
-															<a href="CreerFiches.php" class="btn btn-warning">Modifier</a>
-														  </div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</fieldset>										
-									</form>
+											<input type="submit" class="btn btn-warning" value="Raffraichir" name="Raffraichir" />
+										</form>
+									</div>
 								</div>
-							</div>
-						</div>
+								<form  action="Visualiser-validation.php" method="GET">
+									<input type="hidden" name="IdMatiere" value="<?php 
+									if(isset($_GET["IdMatiere"]))
+									{
+										echo $_GET["IdMatiere"];
+									}  
+									?>
+											"/>
+									<form class="form-horizontal" method="GET" action="Visualiser-Validation.php">
+										<fieldset>
+											<table class="table table-striped">
+												<tr>
+													<td> 
+														<b>Thème</b>
+													</td>
+													<td> 
+														<b>Chapitre</b>
+													</td>
+													<td> 
+														<b> Lien vers ma fiche </b>
+													</td>		
+												</tr>
+												
+												<?php
+													$db = mysqli_connect('localhost', 'root', '');
+
+													// on sélectionne la base
+													mysqli_select_db($db,'gestionnotes');
+
+													// on crée la requête SQL
+													$sql = "SELECT f.Theme,f.Chapitre,f.idFiche FROM fiches f WHERE idMatiere= ".$_GET["IdMatiere"]." AND IdEleve= ".$_SESSION["IdUtilisateur"]." ;";
+
+													// on envoie la requête
+													$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+
+													while($data = mysqli_fetch_assoc($req))
+													{
+														echo "<tr>";
+														echo "<td>";
+														echo $data["Theme"];
+														echo "</td>";
+														echo "<td>";
+														echo $data["Chapitre"];
+														echo "</td>";
+														echo "<td>";
+														echo "<b><a href=\"Fiche.php?IdFiche=".$data["idFiche"]."\"  name=\"button2id\" class=\"btn btn-info\">Lire</a>	 </b>";
+														echo "</td>";
+													} 
+												?>
+											</table>
+										
+									</form>
+								</form>	
+							</fieldset>
+						</form>
 					</div>
-				</div>	
+				</div>
 			</div>
 		</div>
-	</body>	
+	</div>
+</div>
+</body>
 </html>

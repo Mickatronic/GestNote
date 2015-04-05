@@ -54,17 +54,16 @@
 							<label class="control-label">Mot De Passe: </label>
 							<div class="input-group">
 								<span id="start-date" class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
-								<input type="password" name="Mdp" class="form-control input-sm" placeholder="ex : ******">
+								<input type="password" name="Mdp" class="form-control input-sm">
 							</div>
 						</div>
 						
 						<div class="row">
-							<div class="form-group">
-								<br><label class="control-label">Validation: </label></br>
-								<div class="input-group">
-								
+							<div class="input-group">
+								<label class="control-label">Validation: </label>
+								<div class="input-group">								
 									<span id="start-date" class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
-									<input type="text" name="Validation" placeholder="ex : ******" class="form-control">
+									<input type="password" name="Validation" class="form-control input-sm" >
 								</div>
 							</div>
 						</div>
@@ -83,11 +82,40 @@
 							  <label class="control-label" for="Classe">Classe: </label>
 							  <div class="">
 								<select id="selectbasic" name="Classe" class="form-control">
-								  <option value="1">1</option>
-								  <option value="2">2</option>
-								  <option value="3">3</option>
-								  <option value="4">4</option>
-								  <option value="5">5</option>
+								 <?php
+								if(isset($_GET["IdClasse"]))
+								{
+									$idclasse = $_GET["IdClasse"];
+								} 
+								else
+								{
+									$idclasse = "";
+								}
+								$db = mysqli_connect('localhost', 'root', '');
+
+								// on sélectionne la base
+								mysqli_select_db($db,'gestionnotes');
+
+								// on crée la requête SQL
+								$sql = "SELECT * FROM Classes";
+
+								// on envoie la requête
+								$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+
+								while($data = mysqli_fetch_assoc($req))
+								{
+									if($idclasse == $data["IdClasse"])
+									{
+										echo "<option value=\"".$data["IdClasse"]."\" selected >".$data["Nom"]."</option>";
+									}
+									else
+									{
+										echo "<option value=\"".$data["IdClasse"]."\">".$data["Nom"]."</option>";
+									}
+									
+									
+								} 
+								?>
 								</select>
 							  </div>
 							</div>

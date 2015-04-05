@@ -1,14 +1,14 @@
 <?php
 	// Déclaration des variables
-	$Nom= "" ; // Type String 
+	$Nom= "" ;
 	$Prenom= ""; 
 	$Login= ""; 
-	$Mdp= null; 
-	$Validation= null; 
+	$Mdp= ""; 
+	$Validation= ""; 
 	$Date= 0; 
-	$Classe= null; 
-	$Type= null;  
-	$Email= null; 
+	$Classe= ""; 
+	$Type= "";  
+	$Email= ""; 
 
 	$Nom = $_GET['Nom'];
 	$Prenom= $_GET['Prenom'];
@@ -16,11 +16,9 @@
 	$Login= $_GET['Login'];
 	$Validation= $_GET['Validation'];
 	$Date= $_GET['Date'];
-	$Classe= $_GET['Classe'];
+	$Classe= $_GET['IddClasse'];
 	$Type= $_GET['Type'];
 	$Email= $_GET['Email'];
-	
-
 	
 	$db = mysqli_connect('localhost', 'root', '');
 	
@@ -29,9 +27,6 @@
 	
 	// on crée la requête SQL
 	// on concatène $nom et prénom dans $inscription
-	
-	
-
 
 	
 	If ($Nom=="") {
@@ -71,9 +66,11 @@
 	mysqli_query_ ($sql)
 	
 
-		// on envoie la requête
-	$resultat = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+	// on envoie la requête 
+	$resultat = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());	
 	
 	//on ferme la connexion à mysql
-	mysqli_close($db) ;
+	mysqli_close($db) 
+	
+	header ('Location: VisualiserFiches.php');
  ?>

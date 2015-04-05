@@ -19,7 +19,7 @@
 		<div class="">
 			<div class="row ">
 				<div class="col-sm-offset-4 col-sm-5 jumbotron">
-					<form action="Inscription-validation.php" method="GET"> 
+					<form action="Profil-Validation.php" method="GET"> 
 						<div class="row">
 							<div class="form-group">
 								<label class="control-label">Nom: </label>
@@ -76,31 +76,6 @@
 									<span id="start-date" class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
 									<input type="text" name="Date" aria-describedby="start-date" class="form-control" placeholder="jj/mm/aaaa">
 								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group">
-							  <label class="control-label" for="Classe">Classe: </label>
-							  <div class="">
-								<select id="selectbasic" name="Classe" class="form-control">
-								  <option value="1">1</option>
-								  <option value="2">2</option>
-								  <option value="3">3</option>
-								  <option value="4">4</option>
-								  <option value="5">5</option>
-								</select>
-							  </div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group">
-							  <label class="control-label" for="Type">Type: </label>
-							  <div class="">
-								<select id="selectbasic" name="Type" class="form-control">
-								  <option value="1">Professeur</option>
-								  <option value="2">Eleve</option>
-								</select>
-							  </div>
 							</div>
 						</div>
 						<div class="row">
