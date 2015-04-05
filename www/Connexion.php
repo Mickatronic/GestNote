@@ -52,14 +52,34 @@
 		if($cpt>0)
 		{
 			// C'est un prof !!
-			$_SESSION["Type"] = "Prof";
+			$_SESSION["Type"] = "Professeur";
 			$_SESSION["IdProfesseur"] = $idProf;
-			$_SESSION["Nom"] = "Admin";
 			echo "to";
 		}
 		else
 		{
-			// Il existe pas : ERREUR !
+			// C'est peut être un admin ?
+			// On crée la requête SQL
+			$sql = "SELECT * FROM administrateurs WHERE login ='".$login."' and mdp = '".$Mdp."';";
+			
+			// On envoie la requête
+			$resultat = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+			
+			$cpt=0;
+			$idProf = 0;
+			while($data = mysqli_fetch_assoc($resultat))
+			{
+				$cpt++;
+				$idAdmin = $data["IdAdministrateur"];
+			} 
+			if($cpt>0)
+			{
+				// C'est un admin !!
+				$_SESSION["Type"] = "Administrateur";
+				$_SESSION["IdAdministrateur"] = $idAdmin;
+				$_SESSION["Nom"] = "Admin";
+				echo "to";
+			}
 		}
 	}
 	header("Location: index.php");
@@ -67,15 +87,5 @@
 
 
 
-	if ($login == "t" && $Mdp== "t")
-	{
-		$_SESSION["Nom"] = "Admin";
-
-		//header("Location: MonEspace.php");
-	}
-	else
-	{
-		//header("Location: Erreur.php");
-	}
 
 	?>

@@ -59,9 +59,9 @@
 	
 	If ($Type==2) {
 		$sql = "Insert Into Eleves (Nom,Prenom,Login,Mdp,Validation,Date,idClasse,Email) VALUES('".$Nom."','".$Prenom."','".$Login."','".$Mdp."','".$Validation."','".$Date."','".$Classe."','".$Email."');";
-	
+		
 	} else {
-		$sql = "Insert Into Professeur (Nom,Prenom,Login,Mdp,Validation,Date,Email) VALUES('".$Nom."','".$Prenom."','".$Login."','".$Mdp."','".$Validation."','".$Date."','".$Email."');";
+		$sql = "Insert Into Professeurs (Nom,Prenom,Login,Mdp,Email) VALUES('".$Nom."','".$Prenom."','".$Login."','".$Mdp."','".$Email."');";
 	}
 
 	

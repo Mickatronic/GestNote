@@ -61,7 +61,7 @@
 			<?php
 			if(isset($_SESSION['Type']))
 			{
-				if($_SESSION['Type'] == "professeur")
+				if($_SESSION['Type'] == "Administrateur")
 				{
 			?>
 			<li class="dropdown">
