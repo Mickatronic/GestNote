@@ -26,7 +26,6 @@
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo "Administration" ;?><span class="caret"></span></a>
 			  <ul class="dropdown-menu" role="menu">
 				<li><a href="CreerClasse.php">Créer Classe</a></li>
-				
 				<li><a href="ListerClasse.php">Lister Classe</a></li>
 				<li class="divider"></li>
 				<li><a href="CreerMatiere.php">Créer Matiere</a></li>
@@ -35,6 +34,7 @@
 			</li>
 			<?php
 				}
+			}
 			?>
 			  
 			
@@ -54,6 +54,7 @@
 			  </ul>
 			</li>
 			<?php
+				}
 			}
 			?>
 			
@@ -73,6 +74,7 @@
 			  </ul>
 			</li>
 			<?php
+				}
 			}
 			?>
 			
@@ -83,7 +85,7 @@
 				<li><a href="MonProfil.php">Profil</a></li>
 			  </ul>
 			</li>
-			
+		</ul>
 		  <?php
 		  if(isset($_SESSION['Type']))
 		  {
@@ -96,9 +98,7 @@
 		  }
 		  else
 		  {
-
 		  ?>
-
 			<form action="Connexion.php" method="POST" class="navbar-form navbar-right" role="search">
 			<div class="form-group">
 			  <input type="text" name="login" class="form-control input-sm" placeholder="ex : mhonvault">
@@ -109,6 +109,7 @@
 			<input type="submit" class="btn btn-primary btn-sm" value="Connexion"></input>
 			<a href="Inscription.php" class="btn btn-success btn-sm">Inscription</a>
 		  </form>
+		  
 		  <?php
 		  }
 		 ?>
