@@ -17,9 +17,9 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav">
 			<?php
-			if(isset($_SESSION['Type']))
+			if(isset($_SESSION['Administrateurs']))
 			{
-				if($_SESSION['Type'] == "Prof")
+				if($_SESSION['Administrateurs'] == "IdAdministrateurs")
 				{
 			?>
 			<li class="dropdown">
@@ -38,6 +38,44 @@
 			?>
 			  
 			
+			<?php
+			if(isset($_SESSION['Type']))
+			{
+				if($_SESSION['Type'] == "eleve")
+				{
+			?>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo "Administration" ;?><span class="caret"></span></a>
+			  <ul class="dropdown-menu" role="menu">
+				<li><a href="CreerFiches.php">Créer Fiches</a></li>
+				<li><a href="VisualiserFiches.php">Visualiser Fiches</a></li>
+				<li class="divider"></li>
+				<li><a href="VisualiserNotes.php">Visualiser Notes</a></li>
+			  </ul>
+			</li>
+			<?php
+			}
+			?>
+			
+			<?php
+			if(isset($_SESSION['Type']))
+			{
+				if($_SESSION['Type'] == "professeur")
+				{
+			?>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo "Administration" ;?><span class="caret"></span></a>
+			  <ul class="dropdown-menu" role="menu">
+				<li><a href="CreerFiches.php">Créer Notes</a></li>
+				<li><a href="VisualiserFiches.php">Visualiser Notes</a></li>
+				<li class="divider"></li>
+				<li><a href="VisualiserNotes.php">Visualiser Fiches</a></li>
+			  </ul>
+			</li>
+			<?php
+			}
+			?>
+			
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo "Utilisateur" ;?><span class="caret"></span></a>
 			  <ul class="dropdown-menu" role="menu">
@@ -46,21 +84,6 @@
 			  </ul>
 			</li>
 			
-			<li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Outils<span class="caret"></span></a>
-			  <ul class="dropdown-menu" role="menu">
-				<li><a href="CreerFiches.php">Créer Fiches</a></li>
-				<li><a href="VisualiserFiches.php">Visualiser Fiches</a></li>
-				<li class="divider"></li>
-				<li><a href="VisualiserNotes.php">Visualiser Notes</a></li>
-			  </ul>
-			</li>
-			<?php 
-			}
-			?>
-			
-		  </ul>
-		  
 		  <?php
 		  if(isset($_SESSION['Type']))
 		  {
