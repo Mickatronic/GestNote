@@ -68,7 +68,6 @@
 															echo "<option value=\"".$data["IdClasse"]."\">".$data["Nom"]."</option>";
 														}
 														
-														
 													} 
 												?>
 												</select>
