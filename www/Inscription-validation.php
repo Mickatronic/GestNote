@@ -63,7 +63,7 @@
 	} else {
 		$sql = "Insert Into Professeurs (Nom,Prenom,Login,Mdp,Validation,Date,Email) VALUES('".$Nom."','".$Prenom."','".$Login."','".$Mdp."','".$Validation."','".$Date."','".$Email."');";
 	}
-	mysqli_query_ ($sql)
+	mysqli_query_ ($sql) ;
 	
 
 	// on envoie la requête 
