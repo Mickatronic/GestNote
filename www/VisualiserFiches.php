@@ -107,7 +107,7 @@
 													mysqli_select_db($db,'gestionnotes');
 
 													// on crée la requête SQL
-													$sql = "SELECT f.Theme,f.Chapitre,f.idFiche FROM fiches f WHERE idMatiere= ".$_GET["IdMatiere"]." AND IdEleve= ".$_SESSION["IdUtilisateur"]." ;";
+													$sql = "SELECT f.Theme,f.Chapitre,f.idFiche FROM fiches f WHERE IdMatiere= ".$_GET["IdMatiere"]." AND IdEleve= ".$_SESSION["IdUtilisateur"]." ;";
 
 													// on envoie la requête
 													$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());

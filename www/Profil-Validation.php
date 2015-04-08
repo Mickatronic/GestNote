@@ -1,5 +1,5 @@
 <?php
-session_start();
+	session_start();
 
 	$Nom = $_GET['Nom'];
 	$Prenom= $_GET['Prenom'];
@@ -7,7 +7,7 @@ session_start();
 	$Login= $_GET['Login'];
 	$Validation=$_POST['Validation'];
 	$Date= $_GET['Date'];
-	$Classe= $_GET['IddClasse'];
+	$IdClasse= $_GET['IdClasse'];
 	$Email= $_GET['Email'];
 	
 	if(isset($_GET["IdEleve"]))
@@ -39,7 +39,7 @@ session_start();
 		echo $data["Mdp"];
 		echo $data["Validation"];
 		echo $data["Date"];
-		echo $data["IddClasse"];
+		echo $data["IdClasse"];
 		echo $data["Email"];
 	} 
 

@@ -15,11 +15,18 @@
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		  <ul class="nav navbar-nav">
+		<ul class="nav navbar-nav">
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo "Utilisateur" ;?><span class="caret"></span></a>
+			  <ul class="dropdown-menu" role="menu">
+				<li><a href="MonEspace.php">Espace</a></li>
+				<li><a href="MonProfil.php">Profil</a></li>
+			  </ul>
+			</li>
 			<?php
-			if(isset($_SESSION['Administrateurs']))
+			if(isset($_SESSION['Type']))
 			{
-				if($_SESSION['Administrateurs'] == "IdAdministrateurs")
+				if($_SESSION['Type'] == "Administrateur")
 				{
 			?>
 			<li class="dropdown">
@@ -30,6 +37,10 @@
 				<li class="divider"></li>
 				<li><a href="CreerMatiere.php">Créer Matiere</a></li>
 				<li><a href="ListerMatiere.php">Lister Matiere</a></li>
+				<li class="divider"></li>
+				<li><a href="Applis.php">Ajouter Appli</a></li>
+				<li><a href="Geretps.php">Gérer son temps</a></li>
+				
 			  </ul>
 			</li>
 			<?php
@@ -41,7 +52,7 @@
 			<?php
 			if(isset($_SESSION['Type']))
 			{
-				if($_SESSION['Type'] == "eleve")
+				if($_SESSION['Type'] == "Eleve")
 				{
 			?>
 			<li class="dropdown">
@@ -50,7 +61,7 @@
 				<li><a href="CreerFiches.php">Créer Fiches</a></li>
 				<li><a href="VisualiserFiches.php">Visualiser Fiches</a></li>
 				<li class="divider"></li>
-				<li><a href="VisualiserNotes.php">Visualiser Notes</a></li>
+				<li><a href="Geretps.php">Gérer son temps</a></li>
 			  </ul>
 			</li>
 			<?php
@@ -61,16 +72,15 @@
 			<?php
 			if(isset($_SESSION['Type']))
 			{
-				if($_SESSION['Type'] == "Administrateur")
+				if($_SESSION['Type'] == "Professeur")
 				{
 			?>
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo "Administration" ;?><span class="caret"></span></a>
 			  <ul class="dropdown-menu" role="menu">
-				<li><a href="CreerFiches.php">Créer Notes</a></li>
-				<li><a href="VisualiserFiches.php">Visualiser Notes</a></li>
+				<li><a href="EleveFiches.php">Visualiser Fiches</a></li>
 				<li class="divider"></li>
-				<li><a href="VisualiserNotes.php">Visualiser Fiches</a></li>
+				<li><a href="Geretps.php">Gérer son temps</a></li>
 			  </ul>
 			</li>
 			<?php
@@ -78,13 +88,8 @@
 			}
 			?>
 			
-			<li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo "Utilisateur" ;?><span class="caret"></span></a>
-			  <ul class="dropdown-menu" role="menu">
-				<li><a href="MonEspace.php">Espace</a></li>
-				<li><a href="MonProfil.php">Profil</a></li>
-			  </ul>
-			</li>
+			
+			
 		</ul>
 		  <?php
 		  if(isset($_SESSION['Type']))
@@ -100,15 +105,15 @@
 		  {
 		  ?>
 			<form action="Connexion.php" method="POST" class="navbar-form navbar-right" role="search">
-			<div class="form-group">
-			  <input type="text" name="login" class="form-control input-sm" placeholder="ex : mhonvault">
-			</div>
-			<div class="form-group">
-			  <input type="password" name="Mdp" class="form-control input-sm" placeholder="ex : ******">
-			</div>
-			<input type="submit" class="btn btn-primary btn-sm" value="Connexion"></input>
-			<a href="Inscription.php" class="btn btn-success btn-sm">Inscription</a>
-		  </form>
+				<div class="form-group">
+				  <input type="text" name="login" class="form-control input-sm" placeholder="Pseudo">
+				</div>
+				<div class="form-group">
+				  <input type="password" name="Mdp" class="form-control input-sm" placeholder="Mot de Passe">
+				</div>
+				<input type="submit" class="btn btn-primary btn-sm" value="Connexion"></input>
+				<a href="Inscription.php" class="btn btn-success btn-sm">Inscription</a>
+			</form>
 		  
 		  <?php
 		  }
