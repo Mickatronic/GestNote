@@ -18,33 +18,34 @@
 	  
 	<div class="container">
 	<div class="jumbotron">
-	<h4>Révise tes fiches</h4>      
-	<p>...</p>      
+	<h4></h4>      
+	<p></p>      
 	</div>			 
 	<div class="container">
+	
 		<div class="">
 			<div class="row ">
 				<div class="col-xm-offset-1 col-Xm-10 jumbotron">
 						<div> 
 							<fieldset> 
 								<!-- Form Name -->
-								<legend>Mes Fiches</legend>
+								<legend>Selectionner</legend>
 								
 								<!-- Form Name -->
 								<div class="form-group">
 									<div class="row">
-										<form action="VisualiserFiches.php" method="GET">
-											<label class="col-md-2 control-label" for="SelectMatiere">Nom de la Matière</label>
+										<form action="ListeEleves.php" method="GET">
+											<label class="col-md-2 control-label" for="SelectClasse">Nom de la Classe</label>
 											<div class="col-md-4">
-												<select id="SelectMatiere" name="IdMatiere" class="form-control">
+												<select id="SelectClasse" name="IdClasse" class="form-control">
 												<?php
-													if(isset($_GET["IdMatiere"]))
+													if(isset($_GET["IdClasse"]))
 													{
-														$idmatiere = $_GET["IdMatiere"];
+														$idclasse = $_GET["IdClasse"];
 													} 
 													else
 													{
-														$idmatiere = "";
+														$idclasse = "";
 													}
 													$db = mysqli_connect('localhost', 'root', '');
 
@@ -52,51 +53,52 @@
 													mysqli_select_db($db,'gestionnotes');
 
 													// on crée la requête SQL
-													$sql = "SELECT m.Nom, m.IdMatiere FROM eleves e, classes c, matieres m WHERE e.idclasse=c.idClasse AND c.idClasse=m.idclasse AND e.ideleve = ".$_SESSION["IdUtilisateur"]." ";
+													$sql = "SELECT * FROM Classes";
+													//$sql = "SELECT c.nom FROM Classes c, professeurmatiereclasse pmc, professeurs p WHERE c.idprofesseurmatiereclasse=pmc.idprofesseurmatiereclasse AND p.idprofesseur = ".$_SESSION["IdUtilisateur"]." ";
 
 													// on envoie la requête
 													$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 
 													while($data = mysqli_fetch_assoc($req))
 													{
-														if($idmatiere== $data["IdMatiere"])
+														if($idclasse == $data["IdClasse"])
 														{
-															echo "<option value=\"".$data["IdMatiere"]."\" selected >".$data["Nom"]."</option>";
+															echo "<option value=\"".$data["IdClasse"]."\" selected >".$data["Nom"]."</option>";
 														}
 														else
 														{
-															echo "<option value=\"".$data["IdMatiere"]."\">".$data["Nom"]."</option>";
+															echo "<option value=\"".$data["IdClasse"]."\">".$data["Nom"]."</option>";
 														}
-														
 														
 													} 
 												?>
 												</select>
 											</div>
-											<input type="submit" class="btn btn-warning" value="Raffraichir" name="Raffraichir" />
+											<input type="submit" class="btn btn-success" value="Raffraichir" name="Raffraichir" />
 										</form>
 									</div>
 								</div>
-								<form  action="Visualiser-validation.php" method="GET">
-									<input type="hidden" name="IdMatiere" value="<?php 
-									if(isset($_GET["IdMatiere"]))
-									{
-										echo $_GET["IdMatiere"];
-									}  
-									?>
-											"/>
-									<form class="form-horizontal" method="GET" action="Visualiser-Validation.php">
+													
+								<input type="hidden" name="IddClasse" value="<?php 
+								if(isset($_GET["IdClasse"]))
+								{
+									echo $_GET["IdClasse"];
+								}  
+								?>
+									"/>
+																		
+									<form class="form-horizontal" method="GET" action="ListeEleves.php">
 										<fieldset>
 										<table class="table table-striped">
 											<tr>
 												<td> 
-													<b>Thème</b>
+													<b>Nom</b>
 												</td>
 												<td> 
-													<b>Chapitre</b>
+													<b>Prénom</b>
 												</td>
 												<td> 
-													<b> Lien vers ma fiche </b>
+													<b> Lien vers ses fiches </b>
 												</td>		
 											</tr>
 											
@@ -107,8 +109,9 @@
 												mysqli_select_db($db,'gestionnotes');
 
 												// on crée la requête SQL
-												$sql = "SELECT f.Theme,f.Chapitre,f.idFiche FROM fiches f WHERE IdMatiere= ".$_GET["IdMatiere"]." AND IdEleve= ".$_SESSION["IdUtilisateur"]." ;";
-
+												//$sql = "SELECT f.Nom,f.Prenom,f.idFiche FROM fiches f WHERE IdMatiere= ".$_GET["IdMatiere"]." AND IdEleve= ".$_SESSION["IdUtilisateur"]." ;";
+												$sql = "SELECT * FROM Eleves WHERE IdClasse = ".$idclasse;
+												
 												// on envoie la requête
 												$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 
@@ -116,14 +119,14 @@
 												{
 													echo "<tr>";
 													echo "<td>";
-													echo $data["Theme"];
+													echo $data["Nom"];
 													echo "</td>";
 													echo "<td>";
-													echo $data["Chapitre"];
+													echo $data["Prenom"];
 													echo "</td>";
 													echo "<td>";
-													echo "<b><a href=\"Fiche.php?IdFiche=".$data["idFiche"]."\"  name=\"button2id\" class=\"btn btn-info\">Lire</a>	 </b>";
-													echo "</td>";
+													echo "<b><a href=\"EleveFiches.php?IdFiche=".$data["idFiche"]."\"  name=\"button2id\" class=\"btn btn-info\">Lire</a>	 </b>";
+                                                    //echo "<b><a href=\"Fiche.php?IdFiche=".$data["idFiche"]."\"  name=\"button2id\" class=\"btn btn-info\">Lire</a>	 </b>";													echo "</td>";
 												} 
 											?>
 										</table>		

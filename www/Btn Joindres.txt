@@ -15,13 +15,37 @@
   <?php
 	include 'navbar.php';
   ?>
-  
-
   <div class="container">
-	<div class="jumbotron">
-	<!-- Form Name -->
-	<legend>Bienvenue sur Panda-Ko</legend>
+	  <div class="jumbotron">
+		<h1>Bienvenue sur Panda-Ko</h1>       
+		 <p><b>Un outil simple et pratique</b></p>   
+		 <p>- Réalise tes fiches de révision.</p>
+		 <p>- En relation avec le lycée accède à tes notes.</p> 
+		 <p>- Créer ton planning de révision mais adapte le en t'aidant de tes notes.</p> 
+		<p></p>	
+	  </div>
 	  
+		<div class="row">
+			<div class="col-md-3">
+				<center>
+				<b><p></p></b>
+				<p></p>
+				</center>
+			</div>
+			<div class="col-md-3">
+				<center>
+				<b><p></p></b>
+				<p></p>
+				</center>
+			</div>
+			<div class="col-md-3"> 
+				 <center> 
+				 <b><p> </p></b>   
+				 <p></p> 
+				 </center>
+			</div>
+		</div>
+	</div>
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
 
@@ -36,7 +60,7 @@
                     <!--wrap panel heading in span to trigger image change as well as collapse -->
                     <span class="side-tab" data-target="#tab1" data-toggle="tab" role="tab" aria-expanded="false">
                         <div class="panel-heading" role="tab" id="headingOne"data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <h3 <b class="panel-title">A quoi �a sert ? </b></h3>
+                            <h4 class="panel-title">She Sells Seashells</h4>
                         </div>
                     </span>
                     
@@ -54,7 +78,7 @@
                     <!--wrap panel heading in span to trigger image change as well as collapse -->
                     <span class="side-tab" data-target="#tab2" data-toggle="tab" role="tab" aria-expanded="false">
                         <div class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <h4 class="panel-title collapsed">R�alise tes fiches de r�vision</h4>
+                            <h4 class="panel-title collapsed">TAB 2</h4>
                         </div>
                     </span>
 
@@ -72,7 +96,7 @@
                     <!--wrap panel heading in span to trigger image change as well as collapse -->
                     <span class="side-tab" data-target="#tab3" data-toggle="tab" role="tab" aria-expanded="false">
                         <div class="panel-heading" role="tab" id="headingThree"  class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            <h4 class="panel-title">Applications pratique</h4>
+                            <h4 class="panel-title">TAB 3 </h4>
                         </div>
                     </span>
 
@@ -82,23 +106,7 @@
                            tab 3 content
                           </div>
                         </div>
-                </div>
-				<!--  panel 4 -->
-                <div class="panel panel-default">
-                    <!--wrap panel heading in span to trigger image change as well as collapse -->
-                    <span class="side-tab" data-target="#tab3" data-toggle="tab" role="tab" aria-expanded="false">
-                        <div class="panel-heading" role="tab" id="headingThree"  class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            <h4 class="panel-title">Fait toi aider par tes profs</h4>
-                        </div>
-                    </span>
-
-                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                          <div class="panel-body">
-                          <!-- tab content goes here -->
-                           tab 3 content
-                          </div>
-                        </div>
-                </div>
+                      </div>
             </div> <!-- / panel-group -->
              
         </div> <!-- /col-md-4 -->
@@ -128,28 +136,39 @@
                         </div>
                     </div>
                 </div>
-				<br>
-				<!-- Social Footer, Colour Matching Icons -->
-				<!-- Include Font Awesome Stylesheet in Header -->
-				<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-				<!-- // -->
-				<div class="container">
-					<h5></h5>
-					<hr>
-						<div class="text-center center-block">
-							<p class="txt-railway"></p>
-							<!-- Form Name -->
-							<legend>Nous Joindres</legend>
-								<a href="https://www.facebook.com/bootsnipp"><i id="social" class="fa fa-facebook-square fa-3x social-fb"></i></a>
-								<a href="https://twitter.com/bootsnipp"><i id="social" class="fa fa-twitter-square fa-3x social-tw"></i></a>
-								<a href="https://plus.google.com/+Bootsnipp-page"><i id="social" class="fa fa-google-plus-square fa-3x social-gp"></i></a>
-								<a href="mailto:bootsnipp@gmail.com"><i id="social" class="fa fa-envelope-square fa-3x social-em"></i></a>
-						</div>
-					<hr>
-				</div>
-				<br />
                 <div class="md-base"></div>
             </div> <!-- end macbook pro mockup -->
+
         </div> <!-- / .col-md-8 -->
     </div> <!--/ .row -->
 </div> <!-- end sidetab container -->
+	
+	<div class="container">
+    <div class="col-lg-4 col-sm-6 text-center">
+    <div class="well">
+        <h4>What is on your mind?</h4>
+    <div class="input-group">
+        <input type="text" id="userComment" class="form-control input-sm chat-input" placeholder="Write your message here..." />
+	    <span class="input-group-btn" onclick="addComment()">     
+            <a href="#" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-comment"></span> Add Comment</a>
+        </span>
+    </div>
+    <hr data-brackets-id="12673">
+    <ul data-brackets-id="12674" id="sortable" class="list-unstyled ui-sortable">
+        <strong class="pull-left primary-font">James</strong>
+        <small class="pull-right text-muted">
+           <span class="glyphicon glyphicon-time"></span>7 mins ago</small>
+        </br>
+        <li class="ui-state-default">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </li>
+        </br>
+         <strong class="pull-left primary-font">Taylor</strong>
+        <small class="pull-right text-muted">
+           <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
+        </br>
+        <li class="ui-state-default">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+        
+    </ul>
+    </div>
+</div>
+  </body>
+</html>

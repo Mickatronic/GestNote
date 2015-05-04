@@ -12,7 +12,15 @@
 		  <a class="navbar-brand active" href="index.php">Accueil</a>
 		</div>
 		
-
+		<?php
+	
+			//if(isset($_SESSION['Type']))
+			if(isset($_SESSION['Type'])) 
+			{
+				if(($_SESSION['Type']  == "Eleve") || ($_SESSION['Type']  == "Professeur")) 
+				{
+			
+			?>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
@@ -20,15 +28,21 @@
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo "Utilisateur" ;?><span class="caret"></span></a>
 			  <ul class="dropdown-menu" role="menu">
 				<li><a href="MonEspace.php">Espace</a></li>
-				<li><a href="MonProfil.php">Profil</a></li>
+				<li><a href="VoirProfil.php">Profil</a></li>
 			  </ul>
 			</li>
+		 <?php
+			}
+		  }
+		 ?>
 			<?php
+		
 			if(isset($_SESSION['Type']))
 			{
 				if($_SESSION['Type'] == "Administrateur")
 				{
 			?>
+			<ul class="nav navbar-nav">
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo "Administration" ;?><span class="caret"></span></a>
 			  <ul class="dropdown-menu" role="menu">
@@ -38,8 +52,14 @@
 				<li><a href="CreerMatiere.php">Créer Matiere</a></li>
 				<li><a href="ListerMatiere.php">Lister Matiere</a></li>
 				<li class="divider"></li>
-				<li><a href="Applis.php">Ajouter Appli</a></li>
-				<li><a href="Geretps.php">Gérer son temps</a></li>
+				<li><a href="CreerCategorie.php">Créer Catégorie</a></li>
+				<li><a href="ListerCategorie.php">Liste Catégorie</a></li>
+				<li class="divider"></li>
+				<li><a href="CreerApplis.php">Créer Applications</a></li>
+				<li><a href="VoirApplis.php">Liste Applis</a></li>
+				<li class="divider"></li>
+				<li><a href="ListeProfs.php">Liste des Professeurs</a></li>
+				<li><a href="ElevesListe.php">Liste des Elèves</a></li>
 				
 			  </ul>
 			</li>
@@ -56,12 +76,12 @@
 				{
 			?>
 			<li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo "Administration" ;?><span class="caret"></span></a>
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo "Outils" ;?><span class="caret"></span></a>
 			  <ul class="dropdown-menu" role="menu">
 				<li><a href="CreerFiches.php">Créer Fiches</a></li>
 				<li><a href="VisualiserFiches.php">Visualiser Fiches</a></li>
 				<li class="divider"></li>
-				<li><a href="Geretps.php">Gérer son temps</a></li>
+				<li><a href="VoirApplis.php">Applications</a></li>
 			  </ul>
 			</li>
 			<?php
@@ -76,20 +96,18 @@
 				{
 			?>
 			<li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo "Administration" ;?><span class="caret"></span></a>
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo "Outils" ;?><span class="caret"></span></a>
 			  <ul class="dropdown-menu" role="menu">
-				<li><a href="EleveFiches.php">Visualiser Fiches</a></li>
+				<li><a href="ListeEleves.php">Visualiser Fiches</a></li>
 				<li class="divider"></li>
-				<li><a href="Geretps.php">Gérer son temps</a></li>
+				<li><a href="VoirApplis.php">Applications</a></li>
 			  </ul>
 			</li>
 			<?php
 				}
 			}
-			?>
-			
-			
-			
+			?>		
+						
 		</ul>
 		  <?php
 		  if(isset($_SESSION['Type']))

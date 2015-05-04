@@ -117,7 +117,7 @@
 										echo $_GET["IdClasse"];
 									}  
 									?>
-											"/>
+										"/>
 									<!-- Text input-->
 									<div class="row control-group">
 										</br>

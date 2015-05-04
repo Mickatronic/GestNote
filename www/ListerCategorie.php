@@ -1,4 +1,4 @@
-<?php
+ <?php
 //Page Acceuil
 	session_start();	
 ?>
@@ -20,15 +20,15 @@
 		<fieldset>
 
 		<!-- Form Name -->
-			<legend>Lister Classe</legend>
-			<form class="form-horizontal" method="GET" action="CleerMatiere-Validation.php">
+			<legend>Lister Catégorie</legend>
+			<form class="form-horizontal" method="GET" action="ListeCategorie.php">
 				<fieldset>
 					<table class="table table-striped">
 						<tr>
 							<td> 
-								<b>IdClasse</b>
+								<b>IdAppliCatégorie</b>
 							</td>
-							<td> <b>Nom de la classe</b>
+							<td> <b>Nom de la catégorie</b>
 							</td>
 						</tr>
 						<?php
@@ -38,7 +38,7 @@
 							mysqli_select_db($db,'gestionnotes');
 
 							// on crée la requête SQL
-							$sql = "SELECT * FROM Classes;";
+							$sql = "SELECT * FROM ApplisCategories;";
 
 							// on envoie la requête
 							$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
@@ -47,7 +47,7 @@
 							{
 								echo "<tr>";
 								echo "<td>";
-								echo $data["IdClasse"];
+								echo $data["IdAppliCategorie"];
 								echo "</td>";
 								echo "<td>";
 								echo $data["Nom"];
@@ -56,8 +56,6 @@
 							} 
 						?>
 					</table>
-					
-
 				</fieldset>
 			</form>
 		</fieldset>

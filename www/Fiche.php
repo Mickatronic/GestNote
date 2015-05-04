@@ -35,6 +35,7 @@
 													<div class="col-xm-offset-1 col-sm-8 jumbotron">
 														<p>Ma Fiche<br/>
 														<textarea name="Fiche" rows="10" cols="50" >
+														
 														<?php
 														if(isset($_GET["IdFiche"]))
 														{

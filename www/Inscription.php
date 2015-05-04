@@ -73,7 +73,7 @@
 								<div class="input-group">
 								
 									<span id="start-date" class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
-									<input type="text" name="Date" aria-describedby="start-date" class="form-control" placeholder="jj/mm/aaaa">
+									<input type="date" name="Date" aria-describedby="start-date" class="form-control" placeholder="jj/mm/aaaa">
 								</div>
 							</div>
 						</div>
