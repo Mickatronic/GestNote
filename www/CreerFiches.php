@@ -19,8 +19,10 @@
 	  			
 <div class="container">
 	<div class="jumbotron">
-	<h4>Astuce :</h4>      
-	<p>...</p>      
+	<b><h4>Astuce :</b></h4>      
+	<p>1. Rédiger votre fiche une fois le cours appris.</p>
+	<p>2. Le vocabulaire + définitions.</p> 
+	<p>3. Suivez la trame de votre cours en synthétisant.</p> 
 	</div>			 
 	<div class="container">
 		<div class="">

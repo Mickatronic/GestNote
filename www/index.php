@@ -20,7 +20,7 @@
   <div class="container">
 	<div class="jumbotron">
 	<!-- Form Name -->
-	<legend>Bienvenue sur Panda-Ko</legend>
+	<legend>Bienvenue sur Ship-Management</legend>
 	  
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
@@ -43,7 +43,7 @@
                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                         <div class="panel-body">
                         <!-- Tab content goes here -->
-                        That fall, as Nadia and Masha got shipped off to prison camps in Siberia, South Brooklyn tried to recover from the storm. My dad and I spent a lot of time in the same apartment engrossed in separate laptops, separate internet missives. He followed Russian news bloggers closely and would update me on troubling developments. A rise in protofascist nationalism
+                        Créer des fiches de révision peut est une tâche ponctuelle qui prend énormément de temps et chaque élèves ne sait pas comment faire une fiche de révision. Ainsi ce site vous permettra en tant qu'élève de créer vos fiches tout au long de l'année à l'aide de conseil pratiques. Les points essentiel seront mis en rappelle et vos fiches pourront être consulter par vos professeurs. Nous irons plus loins et vous proposerons des applications ciblés qui vous permettrons d'être plus efficace au quotidient.  
                         </div>
                     </div>
                 </div> 
