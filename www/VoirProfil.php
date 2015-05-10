@@ -134,6 +134,9 @@ session_start();
 			</div>
 		</div> <!--Juimbo-->
 	</div>
+	<?php
+	}
+	?>
 </div>	
  </body>
 </html>
