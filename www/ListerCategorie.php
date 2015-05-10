@@ -15,10 +15,11 @@
   <?php
 	include 'navbar.php';
   ?>
+  
   <div class="container">
-	  <div class="">
-		<fieldset>
-
+	  <div class="jumbotron">
+			<form class="form-horizontal" method="GET" action="CreerCategorie.php">
+				<fieldset>
 		<!-- Form Name -->
 			<legend>Lister Catégorie</legend>
 			<form class="form-horizontal" method="GET" action="ListeCategorie.php">

@@ -134,7 +134,7 @@
 																echo $data["Utilite"];
 																echo "</td>";
 																echo "<td>";
-																echo "<b><a href=\"ListeApplis.php?IdAppli=".$data["IdAppli"]."\"  name=\"button2id\" class=\"btn btn-info\">Lire</a> </b>";
+																echo "<b><a href=\"ListeApplis.php?VoirApplis=".$data["VoirApplis"]."\"  name=\"button2id\" class=\"btn btn-info\">Lire</a> </b>";
 																echo "</td>";
 															} 
 														?>
