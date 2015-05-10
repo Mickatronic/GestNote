@@ -32,10 +32,13 @@
 								<b>Nom de la classe</b>
 							</td>
 							<td> 
-								<b>IdMatière</b>
+								<b>IdEleve</b>
 							</td>
 							<td> 
-								<b>Nom de la matière</b>
+								<b>Nom</b>
+							</td>
+							<td> 
+								<b>Prenom</b>
 							</td>
 						</tr>
 						
@@ -46,7 +49,7 @@
 							mysqli_select_db($db,'gestionnotes');
 
 							// on crée la requête SQL
-							$sql = "SELECT c.IdClasse,c.nom NomClasse, m.Nom NomMatiere,m.idMatiere FROM Classes c, Matieres m WHERE c.idClasse = m.idClasse ORDER BY c.idClasse, m.idMatiere;";
+							$sql = "SELECT c.IdClasse,c.nom NomClasse, e.Nom, e.Prenom, e.idEleve FROM Classes c, Eleves e WHERE c.idClasse = e.idClasse ORDER BY c.idClasse, e.idEleve;";
 
 							// on envoie la requête
 							$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
@@ -61,10 +64,13 @@
 								echo $data["NomClasse"];
 								echo "</td>";
 								echo "<td>";
-								echo $data["idMatiere"];
+								echo $data["idEleve"];
 								echo "</td>";
 								echo "<td>";
-								echo $data["NomMatiere"];
+								echo $data["Nom"];
+								echo "</td>";
+								echo "</tr>";
+								echo $data["Prenom"];
 								echo "</td>";
 								echo "</tr>";
 							} 
