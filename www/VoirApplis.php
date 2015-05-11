@@ -11,21 +11,20 @@
 	
  </head>
   
-	<body>
+ <body>
 	  <?php
 		include 'navbar.php';
 	  ?>
 	  
 	<div class="container">
-	<div class="jumbotron">
-	<h4>Deviens efficace en gérant ton temps</h4>      
-	<p>...</p>      
-	</div>			 
-	<div class="container">
-		<div class="">
-			<div class="row ">
-				<div class="col-xm-offset-1 col-Xm-10 jumbotron">
-					<div> 
+		<div class="jumbotron">
+		<h4>Deviens efficace en gérant ton temps</h4>      
+		<p>...</p>      
+		</div>			 
+		<div class="container">
+			<div class="">
+				<div class="row ">
+					<div class="col-xm-offset-1 col-Xm-10 jumbotron">						 
 						<fieldset> 
 							<!-- Form Name -->
 							<legend>Trouve l'appli qui te convient</legend>
@@ -88,67 +87,68 @@
 							
 							<div class="container">
 								<div class="row ">										
-										<form  action="VoirApplis-validation.php" method="GET">
-											<input type="hidden" name="IdAppli" value="<?php 
-											if(isset($_GET["IdAppli"]))
-											{
-												echo $_GET["IdAppli"];
-											}  
-											?>
-													"/>
-											<form class="form-horizontal" method="GET" action="ListeApplis.php">
-												<fieldset>
-													<table class="table table-striped">
-														<tr>
-															<td> 
-																<b>Nom</b>
-															</td>
-															<td> 
-																<b>Utiliter</b>
-															</td>
-															<td> 
-																<b> Liste d'Applis </b>
-															</td>		
-														</tr>
-														
-														<?php
-															$db = mysqli_connect('localhost', 'root', '');
+									<form  action="VoirApplis-validation.php" method="GET">
+										<input type="hidden" name="IdAppli" value="<?php 
+										if(isset($_GET["IdAppli"]))
+										{
+											echo $_GET["IdAppli"];
+										}  
+										?>
+												"/>
+										<form class="form-horizontal" method="GET" action="ListeApplis.php">
+											<fieldset>
+												<table class="table table-striped">
+													<tr>
+														<td> 
+															<b>Nom</b>
+														</td>
+														<td> 
+															<b>Utiliter</b>
+														</td>
+														<td> 
+															<b> Liste d'Applis </b>
+														</td>		
+													</tr>
+													
+													<?php
+														$db = mysqli_connect('localhost', 'root', '');
 
-															// on sélectionne la base
-															mysqli_select_db($db,'gestionnotes');
+														// on sélectionne la base
+														mysqli_select_db($db,'gestionnotes');
 
-															// on crée la requête SQL
-															//$sql = "SELECT f.Theme,f.Chapitre,f.idFiche FROM fiches f WHERE IdMatiere= ".$_GET["IdMatiere"]." AND IdEleve= ".$_SESSION["IdUtilisateur"]." ;";
-															$sql = "SELECT a.Nom,a.Utilite FROM Applis a";
+														// on crée la requête SQL
+														//$sql = "SELECT f.Theme,f.Chapitre,f.idFiche FROM fiches f WHERE IdMatiere= ".$_GET["IdMatiere"]." AND IdEleve= ".$_SESSION["IdUtilisateur"]." ;";
+														$sql = "SELECT a.Nom,a.Utilite FROM Applis a";
 
-															// on envoie la requête
-															$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+														// on envoie la requête
+														$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 
-															while($data = mysqli_fetch_assoc($req))
-															{
-																echo "<tr>";
-																echo "<td>";
-																echo $data["Nom"];
-																echo "</td>";
-																echo "<td>";
-																echo $data["Utilite"];
-																echo "</td>";
-																echo "<td>";
-																echo "<b><a href=\"ListeApplis.php?VoirApplis=".$data["VoirApplis"]."\"  name=\"button2id\" class=\"btn btn-info\">Lire</a> </b>";
-																echo "</td>";
-															} 
-														?>
-													</table>
-												</fieldset>	
-											</form>			
-										</form>										
-									</div>
+														while($data = mysqli_fetch_assoc($req))
+														{
+															echo "<tr>";
+															echo "<td>";
+															echo $data["Nom"];
+															echo "</td>";
+															echo "<td>";
+															echo $data["Utilite"];
+															echo "</td>";
+															echo "<td>";
+															echo "<b><a href=\"ListeApplis.php?VoirApplis=".$data["VoirApplis"]."\"  name=\"button2id\" class=\"btn btn-info\">Lire</a> </b>";
+															echo "</td>";
+														} 
+													?>
+												</table>
+											</fieldset>	
+										</form>			
+									</form>										
 								</div>
-							</div>	
+							</div>								
 						</fieldset>	
-					</div>
+					</div>	
 				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
+ </body>
+</html> 
 	

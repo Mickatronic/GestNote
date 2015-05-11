@@ -52,7 +52,7 @@ session_start();
 						
 					
 					?>
-<div class="container">
+	<div class="container">
 		<div class="">
 			<div class="row ">
 				<div class="col-sm-offset-4 col-sm-5 jumbotron">
@@ -99,7 +99,6 @@ session_start();
 							<div class="form-group">
 								<br><label class="control-label">Validation: </label></br>
 								<div class="input-group">
-								
 									<span id="start-date" class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
 									<input type="password" name="Validation" value="<?php echo $data["Validation"]; ?>"class="form-control">
 								</div>
@@ -108,8 +107,7 @@ session_start();
 						<div class="row">
 							<div class="form-group">
 								<label class="control-label">Date: </label>
-								<div class="input-group">
-								
+								<div class="input-group">										
 									<span id="start-date" class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
 									<input type="date" name="Date" aria-describedby="start-date" class="form-control" placeholder="jj/mm/aaaa">
 								</div>
@@ -118,17 +116,14 @@ session_start();
 						<div class="row">
 							<div class="form-group">
 								<label class="control-label">Adresse Mail</label>
-								<div class="input-group">
-								
+								<div class="input-group">										
 									<span id="start-date" class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-									<input type="text" name="Email" aria-describedby="start-date" class="form-control" value="<?php echo $data["Email"]; ?>>
+									<input type="text" name="Email" aria-describedby="start-date" class="form-control" value="<?php echo $data["Email"]; ?>">
 								</div>
 							</div>
 						</div>
 						<div class="row">
 						</div>
-						
-						
 					</form>
 				</div>
 			</div>
@@ -137,6 +132,5 @@ session_start();
 	<?php
 	}
 	?>
-</div>	
  </body>
 </html>

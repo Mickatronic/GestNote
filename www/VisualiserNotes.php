@@ -9,19 +9,20 @@
 			include 'includes.html';
 		  ?>
 	
- </head>
+   </head>
   
   <body>
-	  <?php
-		include 'navbar.php';
-	  ?>
-	  <div class="container">
-		...
-	  </div>
-	  
-	  <div class="container">
-  <div class="jumbotron">
-    <center><h3>Visualiser mes notes</h3></center>      
-    <p></p>      
-  </div>
- 
+    <?php
+	  include 'navbar.php';
+    ?>
+	<div class="container">
+	...
+	</div>
+        <div class="container">
+			<div class="jumbotron">
+				<center><h3>Visualiser mes notes</h3></center>      
+				<p></p>      
+		    </div>
+		</div>
+   </body>
+</html>

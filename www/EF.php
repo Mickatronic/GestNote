@@ -17,15 +17,15 @@
 	  ?>
 	  
 	<div class="container">
-	<div class="jumbotron">
-	<h4>Révise tes fiches</h4>      
-	<p>...</p>      
-	</div>			 
+		<div class="jumbotron">
+			<h4>Révise tes fiches</h4>      
+			<p>...</p>      
+		</div>			 
 	<div class="container">
 		<div class="">
 			<div class="row ">
 				<div class="col-xm-offset-1 col-Xm-10 jumbotron">
-						<div> 
+					<div> 
 							<fieldset> 
 								<!-- Form Name -->
 								<legend>Visualiser Fiches Elèves</legend>

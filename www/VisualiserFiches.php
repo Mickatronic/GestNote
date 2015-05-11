@@ -7,77 +7,76 @@
     <title>Page d'accueil</title>
 		  <?php
 			include 'includes.html';
-		  ?>
-	
+		  ?>	
  </head>
   
-	<body>
+  <body>
 	  <?php
 		include 'navbar.php';
 	  ?>
 	  
 	<div class="container">
-	<div class="jumbotron">
-	<h4>Révise tes fiches</h4>      
-	<p>...</p>      
-	</div>			 
-	<div class="container">
-		<div class="">
-			<div class="row ">
-				<div class="col-xm-offset-1 col-Xm-10 jumbotron">
+		<div class="jumbotron">
+			<h4>Révise tes fiches</h4>      
+			<p>...</p>      
+		</div>			 
+		<div class="container">
+			<div class="">
+				<div class="row ">
+					<div class="col-xm-offset-1 col-Xm-10 jumbotron">
 						<div> 
-							<fieldset> 
-								<!-- Form Name -->
-								<legend>Mes Fiches</legend>
-								
-								<!-- Form Name -->
-								<div class="form-group">
-									<div class="row">
-										<form action="VisualiserFiches.php" method="GET">
-											<label class="col-md-2 control-label" for="SelectMatiere">Nom de la Matière</label>
-											<div class="col-md-4">
-												<select id="SelectMatiere" name="IdMatiere" class="form-control">
-												<?php
-													if(isset($_GET["IdMatiere"]))
-													{
-														$idmatiere = $_GET["IdMatiere"];
-													} 
-													else
-													{
-														$idmatiere = "";
-													}
-													$db = mysqli_connect('localhost', 'root', '');
-
-													// on sélectionne la base
-													mysqli_select_db($db,'gestionnotes');
-
-													// on crée la requête SQL
-													$sql = "SELECT m.Nom, m.IdMatiere FROM eleves e, classes c, matieres m WHERE e.idclasse=c.idClasse AND c.idClasse=m.idclasse AND e.ideleve = ".$_SESSION["IdUtilisateur"]." ";
-
-													// on envoie la requête
-													$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
-
-													while($data = mysqli_fetch_assoc($req))
-													{
-														if($idmatiere== $data["IdMatiere"])
+								<fieldset> 
+									<!-- Form Name -->
+									<legend>Mes Fiches</legend>
+									
+									<!-- Form Name -->
+									<div class="form-group">
+										<div class="row">
+											<form action="VisualiserFiches.php" method="GET">
+												<label class="col-md-2 control-label" for="SelectMatiere">Nom de la Matière</label>
+												<div class="col-md-4">
+													<select id="SelectMatiere" name="IdMatiere" class="form-control">
+													<?php
+														if(isset($_GET["IdMatiere"]))
 														{
-															echo "<option value=\"".$data["IdMatiere"]."\" selected >".$data["Nom"]."</option>";
-														}
+															$idmatiere = $_GET["IdMatiere"];
+														} 
 														else
 														{
-															echo "<option value=\"".$data["IdMatiere"]."\">".$data["Nom"]."</option>";
+															$idmatiere = "";
 														}
-														
-														
-													} 
-												?>
-												</select>
-											</div>
-											<input type="submit" class="btn btn-warning" value="Raffraichir" name="Raffraichir" />
-										</form>
-									</div>
-								</div>
-								<form  action="Visualiser-validation.php" method="GET">
+														$db = mysqli_connect('localhost', 'root', '');
+
+														// on sélectionne la base
+														mysqli_select_db($db,'gestionnotes');
+
+														// on crée la requête SQL
+														$sql = "SELECT m.Nom, m.IdMatiere FROM eleves e, classes c, matieres m WHERE e.idclasse=c.idClasse AND c.idClasse=m.idclasse AND e.ideleve = ".$_SESSION["IdUtilisateur"]." ";
+
+														// on envoie la requête
+														$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+
+														while($data = mysqli_fetch_assoc($req))
+														{
+															if($idmatiere== $data["IdMatiere"])
+															{
+																echo "<option value=\"".$data["IdMatiere"]."\" selected >".$data["Nom"]."</option>";
+															}
+															else
+															{
+																echo "<option value=\"".$data["IdMatiere"]."\">".$data["Nom"]."</option>";
+															}
+															
+															
+														} 
+													?>
+													</select>
+												</div>
+												<input type="submit" class="btn btn-warning" value="Raffraichir" name="Raffraichir" />
+											</form>
+										</div>
+                                    </div>
+							<form  action="Visualiser-validation.php" method="GET">
 									<input type="hidden" name="IdMatiere" value="<?php 
 									if(isset($_GET["IdMatiere"]))
 									{
@@ -85,8 +84,8 @@
 									}  
 									?>
 											"/>
-									<form class="form-horizontal" method="GET" action="Visualiser-Validation.php">
-										<fieldset>
+								<form class="form-horizontal" method="GET" action="Visualiser-Validation.php">
+									<fieldset>
 										<table class="table table-striped">
 											<tr>
 												<td> 
@@ -126,16 +125,15 @@
 													echo "</td>";
 												} 
 											?>
-										</table>		
-									</form>
-								</form>	
-							</fieldset>
-						</form>
+										</table>
+									</fieldset>	
+								</form>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-</body>
+  </body>
 </html>

@@ -15,8 +15,8 @@
   <?php
 	include 'navbar.php';
   ?>
-  <div class="container">
-	  <div class="jumbotron">
+    <div class="container">
+	    <div class="jumbotron">
 			<form class="form-horizontal" method="GET" action="CleerMatiere-Validation.php">
 				<fieldset>
 
@@ -26,7 +26,7 @@
 				  <label class="col-md-4 control-label" for="SelectClasse">Choisissez la classe</label>
 				  <div class="col-md-4">
 					<select id="SelectClasse" name="SelectClasse" class="form-control">
-					<?php
+					    <?php
 							$db = mysqli_connect('localhost', 'root', '');
 
 							// on sélectionne la base
@@ -64,7 +64,7 @@
 
 				</fieldset>
 			</form>
-	  </div>
-  </div>
+	    </div>
+    </div>
   </body>
 </html>

@@ -56,8 +56,7 @@
 								<span id="start-date" class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
 								<input type="password" name="Mdp" class="form-control input-sm">
 							</div>
-						</div>
-						
+						</div>						
 						<div class="row">
 							<div class="input-group">
 								<label class="control-label">Validation: </label>
@@ -143,8 +142,8 @@
 						<div class="row">
 							<div class="form-group">
 							  <center><div class="col-md-12">
-							  <input type="submit" value="Inscription" class="btn btn-success"/>
-								<a href="index.php"  name="button2id" class="btn btn-danger">Annulation</a>			
+									  <input type="submit" value="Inscription" class="btn btn-success"/>
+										<a href="index.php"  name="button2id" class="btn btn-danger">Annulation</a>			
 							  </div></center>  
 							</div>
 						</div>

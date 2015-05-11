@@ -15,8 +15,8 @@
   <?php
 	include 'navbar.php';
   ?>
-  <div class="container">
-	  <div class="jumbotron">
+    <div class="container">
+	    <div class="jumbotron">
 			<form class="form-horizontal" method="GET" action="Appli-Validation.php">
 				<fieldset>
 
@@ -57,7 +57,7 @@
 					</div>
 					<!-- Textarea -->
 					<div class="container">
-					<div class="row ">
+					    <div class="row ">
 							<div class="col-xm-offset-1 col-sm-8 jumbotron">
 								<p>Explications<br/>
 								<textarea name="Utiliter" rows="10" cols="50" ></textarea>
@@ -67,9 +67,9 @@
 					
 					<!-- File Button --> 
 					<div class="control-group">
-					  <div class="controls">
-						<br><input id="AjouterId" name="Ajouter" class="btn btn-inverse" type="file"></br>
-					  </div>
+						  <div class="controls">
+							 <br><input id="AjouterId" name="Ajouter" class="btn btn-inverse" type="file"></br>
+						  </div>
 					</div>
 					
 					<!-- Button (Double) -->
@@ -81,7 +81,7 @@
 					</div>
 				</fieldset>
 			</form>
-	  </div>
-  </div>
+	    </div>
+    </div>
   </body>
 </html>
